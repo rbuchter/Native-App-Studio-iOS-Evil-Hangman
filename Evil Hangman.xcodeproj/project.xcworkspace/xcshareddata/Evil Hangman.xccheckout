@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3F7F248B-5619-410F-B664-73C4FBFB243E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Evil Hangman</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>8F72D8DE71CF6F2783C31EAD30B53A63158844A9</key>
+		<string>https://github.com/rbuchter/Native-App-Studio-iOS-Evil-Hangman.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Evil Hangman.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>8F72D8DE71CF6F2783C31EAD30B53A63158844A9</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/rbuchter/Native-App-Studio-iOS-Evil-Hangman.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>8F72D8DE71CF6F2783C31EAD30B53A63158844A9</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8F72D8DE71CF6F2783C31EAD30B53A63158844A9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Evil%20Hangman</string>
+		</dict>
+	</array>
+</dict>
+</plist>

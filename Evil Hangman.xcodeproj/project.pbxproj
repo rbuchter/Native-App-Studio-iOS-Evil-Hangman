@@ -14,6 +14,7 @@
 		BF196E9C1A1497D00043D199 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF196E9B1A1497D00043D199 /* Images.xcassets */; };
 		BF196E9F1A1497D00043D199 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF196E9D1A1497D00043D199 /* LaunchScreen.xib */; };
 		BF196EAB1A1497D10043D199 /* Evil_HangmanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF196EAA1A1497D10043D199 /* Evil_HangmanTests.m */; };
+		BF196EB51A14A2390043D199 /* words.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF196EB41A14A2390043D199 /* words.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		BF196EA41A1497D10043D199 /* Evil HangmanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Evil HangmanTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF196EA91A1497D10043D199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF196EAA1A1497D10043D199 /* Evil_HangmanTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Evil_HangmanTests.m; sourceTree = "<group>"; };
+		BF196EB41A14A2390043D199 /* words.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = words.plist; path = ../../words.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		BF196E8E1A1497D00043D199 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BF196EB41A14A2390043D199 /* words.plist */,
 				BF196E8F1A1497D00043D199 /* Info.plist */,
 				BF196E901A1497D00043D199 /* main.m */,
 			);
@@ -199,6 +202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF196EB51A14A2390043D199 /* words.plist in Resources */,
 				BF196E9A1A1497D00043D199 /* Main.storyboard in Resources */,
 				BF196E9F1A1497D00043D199 /* LaunchScreen.xib in Resources */,
 				BF196E9C1A1497D00043D199 /* Images.xcassets in Resources */,
@@ -412,6 +416,7 @@
 				BF196EB01A1497D10043D199 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BF196EB11A1497D10043D199 /* Build configuration list for PBXNativeTarget "Evil HangmanTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +425,7 @@
 				BF196EB31A1497D10043D199 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
