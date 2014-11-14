@@ -1,4 +1,4 @@
-Design document - Evil Hangman  ==================================
+Design document - Evil Hangman  ==============================
 Rick Buchter <br>
 10829911 <br> 
 
