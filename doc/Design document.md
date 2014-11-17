@@ -22,11 +22,13 @@ After every new guess switch to the most words. To maximize ability to cheat.
 - guessState, reference to the label with the current state of the game. 
 - guessedLetters, reference to the label with the letters already guessed by the user. 
 - letterInput, reference to the input field where the last letter will be displayed.
+
 #### SettingsViewController
 - switchToGame, action to return to the current game and save changed settings for next game. 
 - saveSetting, function to save updated data of settings
 - lettersGuesses, reference to the label that displays the current state of the slider
 - incorrentGuesses, reference to the label that displays the current state of the slider. 
+
 #### GameEngineController
 - updateAmountOfGuesses, function update amount of guesses after last guess.
 - updateWordList, update word list after new guess
