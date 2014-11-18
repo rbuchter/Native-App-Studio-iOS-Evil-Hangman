@@ -15,20 +15,18 @@ After every new guess switch to the most words. To maximize ability to cheat.
 
 ### Classes
 #### GameViewController
-- newGame, function to start a new game with the last inputed settings. 
+- newGame, function to start a new game with the last inputed settings. <br>
 - switchToSettings, action to go the settings screen. 
 - newGameButonPressed, action to start a new game.
-- livesLeft, reference to the label with the amount of lives left. 
-- guessState, reference to the label with the current state of the game. 
-- guessedLetters, reference to the label with the letters already guessed by the user. 
-- letterInput, reference to the input field where the last letter will be displayed.
-
+- livesLeft, reference to the label with the amount of lives left. <br>
+- guessState, reference to the label with the current state of the game. <br>
+- guessedLetters, reference to the label with the letters already guessed by the user. <br>
+- letterInput, reference to the input field where the last letter will be displayed. <br>
 #### SettingsViewController
 - switchToGame, action to return to the current game and save changed settings for next game. 
 - saveSetting, function to save updated data of settings
 - lettersGuesses, reference to the label that displays the current state of the slider
 - incorrentGuesses, reference to the label that displays the current state of the slider. 
-
 #### GameEngineController
 - updateAmountOfGuesses, function update amount of guesses after last guess.
 - updateWordList, update word list after new guess
