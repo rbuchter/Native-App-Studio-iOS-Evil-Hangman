@@ -9,6 +9,8 @@
 #import "SettingsViewController.h"
 
 @interface SettingsViewController ()
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *silderNumberOfLettersLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *sliderNumberOfIncorrectGuessesLabel;
 
 @end
 
@@ -16,6 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.silderNumberOfLettersLabel.text = @"Number of letters: 5";
+    self.sliderNumberOfIncorrectGuessesLabel.text = @"Number of incorrect guesses: 7";
     // Do any additional setup after loading the view.
 }
 
@@ -33,5 +37,16 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)sliderNumberOfLettersChanged:(UISlider *)sender {
+    int progress = lroundf(sender.value);
+    self.silderNumberOfLettersLabel.text = [NSString stringWithFormat:@"Number of letters:  %d", progress];
+}
+- (IBAction)sliderNumberOfIncorrectGuessesChanged:(UISlider *)sender {
+    int progress = lroundf(sender.value);
+    self.sliderNumberOfIncorrectGuessesLabel.text = [NSString stringWithFormat:@"Number of incorrect guesses: %d", progress];
+}
+
+
+
 
 @end

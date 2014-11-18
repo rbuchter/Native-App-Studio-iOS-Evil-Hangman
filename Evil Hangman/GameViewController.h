@@ -10,4 +10,6 @@
 
 @interface GameViewController : UIViewController
 
+/* remove keyboard */
+
 @end

@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		BF196E911A1497D00043D199 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF196E901A1497D00043D199 /* main.m */; };
 		BF196E941A1497D00043D199 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF196E931A1497D00043D199 /* AppDelegate.m */; };
-		BF196E971A1497D00043D199 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF196E961A1497D00043D199 /* ViewController.m */; };
-		BF196E9A1A1497D00043D199 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF196E981A1497D00043D199 /* Main.storyboard */; };
 		BF196E9C1A1497D00043D199 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF196E9B1A1497D00043D199 /* Images.xcassets */; };
 		BF196E9F1A1497D00043D199 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF196E9D1A1497D00043D199 /* LaunchScreen.xib */; };
 		BF196EAB1A1497D10043D199 /* Evil_HangmanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF196EAA1A1497D10043D199 /* Evil_HangmanTests.m */; };
 		BF196EB51A14A2390043D199 /* words.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF196EB41A14A2390043D199 /* words.plist */; };
+		BF7CC7721A1B76B400EA3A6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF7CC7701A1B76B400EA3A6B /* Main.storyboard */; };
+		BFA665EE1A1A1A02009A6624 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA665ED1A1A1A02009A6624 /* GameViewController.m */; };
+		BFA665F11A1A1A1A009A6624 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA665F01A1A1A1A009A6624 /* SettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,15 +34,17 @@
 		BF196E901A1497D00043D199 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BF196E921A1497D00043D199 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BF196E931A1497D00043D199 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BF196E951A1497D00043D199 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BF196E961A1497D00043D199 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		BF196E991A1497D00043D199 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF196E9B1A1497D00043D199 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BF196E9E1A1497D00043D199 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		BF196EA41A1497D10043D199 /* Evil HangmanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Evil HangmanTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF196EA91A1497D10043D199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF196EAA1A1497D10043D199 /* Evil_HangmanTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Evil_HangmanTests.m; sourceTree = "<group>"; };
 		BF196EB41A14A2390043D199 /* words.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = words.plist; path = ../../words.plist; sourceTree = "<group>"; };
+		BF7CC7711A1B76B400EA3A6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BFA665EC1A1A1A02009A6624 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		BFA665ED1A1A1A02009A6624 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		BFA665EF1A1A1A1A009A6624 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		BFA665F01A1A1A1A009A6624 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,9 +88,11 @@
 			children = (
 				BF196E921A1497D00043D199 /* AppDelegate.h */,
 				BF196E931A1497D00043D199 /* AppDelegate.m */,
-				BF196E951A1497D00043D199 /* ViewController.h */,
-				BF196E961A1497D00043D199 /* ViewController.m */,
-				BF196E981A1497D00043D199 /* Main.storyboard */,
+				BFA665EC1A1A1A02009A6624 /* GameViewController.h */,
+				BFA665ED1A1A1A02009A6624 /* GameViewController.m */,
+				BFA665EF1A1A1A1A009A6624 /* SettingsViewController.h */,
+				BFA665F01A1A1A1A009A6624 /* SettingsViewController.m */,
+				BF7CC7701A1B76B400EA3A6B /* Main.storyboard */,
 				BF196E9B1A1497D00043D199 /* Images.xcassets */,
 				BF196E9D1A1497D00043D199 /* LaunchScreen.xib */,
 				BF196E8E1A1497D00043D199 /* Supporting Files */,
@@ -203,9 +208,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF196EB51A14A2390043D199 /* words.plist in Resources */,
-				BF196E9A1A1497D00043D199 /* Main.storyboard in Resources */,
 				BF196E9F1A1497D00043D199 /* LaunchScreen.xib in Resources */,
 				BF196E9C1A1497D00043D199 /* Images.xcassets in Resources */,
+				BF7CC7721A1B76B400EA3A6B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,7 +228,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF196E971A1497D00043D199 /* ViewController.m in Sources */,
+				BFA665EE1A1A1A02009A6624 /* GameViewController.m in Sources */,
+				BFA665F11A1A1A1A009A6624 /* SettingsViewController.m in Sources */,
 				BF196E941A1497D00043D199 /* AppDelegate.m in Sources */,
 				BF196E911A1497D00043D199 /* main.m in Sources */,
 			);
@@ -248,20 +254,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BF196E981A1497D00043D199 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BF196E991A1497D00043D199 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BF196E9D1A1497D00043D199 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				BF196E9E1A1497D00043D199 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		BF7CC7701A1B76B400EA3A6B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF7CC7711A1B76B400EA3A6B /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
