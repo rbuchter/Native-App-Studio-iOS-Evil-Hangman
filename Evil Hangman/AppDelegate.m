@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  Evil Hangman
 //
-//  Created by Rick Buchter on 13-11-14.
+//  Created by Rick Buchter on 18-11-14.
 //  Copyright (c) 2014 Rick Buchter. All rights reserved.
 //
 
@@ -17,7 +17,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
     return YES;
 }
 

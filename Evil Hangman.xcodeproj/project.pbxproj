@@ -7,55 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BF196E911A1497D00043D199 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF196E901A1497D00043D199 /* main.m */; };
-		BF196E941A1497D00043D199 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF196E931A1497D00043D199 /* AppDelegate.m */; };
-		BF196E9C1A1497D00043D199 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF196E9B1A1497D00043D199 /* Images.xcassets */; };
-		BF196E9F1A1497D00043D199 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF196E9D1A1497D00043D199 /* LaunchScreen.xib */; };
-		BF196EAB1A1497D10043D199 /* Evil_HangmanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF196EAA1A1497D10043D199 /* Evil_HangmanTests.m */; };
-		BF196EB51A14A2390043D199 /* words.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF196EB41A14A2390043D199 /* words.plist */; };
-		BF7CC7721A1B76B400EA3A6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF7CC7701A1B76B400EA3A6B /* Main.storyboard */; };
-		BFA665EE1A1A1A02009A6624 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA665ED1A1A1A02009A6624 /* GameViewController.m */; };
-		BFA665F11A1A1A1A009A6624 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA665F01A1A1A1A009A6624 /* SettingsViewController.m */; };
+		BF7CC7821A1B7D4700EA3A6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7CC7811A1B7D4700EA3A6B /* main.m */; };
+		BF7CC7851A1B7D4700EA3A6B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7CC7841A1B7D4700EA3A6B /* AppDelegate.m */; };
+		BF7CC7881A1B7D4700EA3A6B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7CC7871A1B7D4700EA3A6B /* ViewController.m */; };
+		BF7CC78B1A1B7D4700EA3A6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF7CC7891A1B7D4700EA3A6B /* Main.storyboard */; };
+		BF7CC78D1A1B7D4700EA3A6B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF7CC78C1A1B7D4700EA3A6B /* Images.xcassets */; };
+		BF7CC7901A1B7D4700EA3A6B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF7CC78E1A1B7D4700EA3A6B /* LaunchScreen.xib */; };
+		BF7CC79C1A1B7D4700EA3A6B /* Evil_HangmanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7CC79B1A1B7D4700EA3A6B /* Evil_HangmanTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		BF196EA51A1497D10043D199 /* PBXContainerItemProxy */ = {
+		BF7CC7961A1B7D4700EA3A6B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = BF196E831A1497D00043D199 /* Project object */;
+			containerPortal = BF7CC7741A1B7D4700EA3A6B /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = BF196E8A1A1497D00043D199;
+			remoteGlobalIDString = BF7CC77B1A1B7D4700EA3A6B;
 			remoteInfo = "Evil Hangman";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BF196E8B1A1497D00043D199 /* Evil Hangman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Evil Hangman.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF196E8F1A1497D00043D199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BF196E901A1497D00043D199 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		BF196E921A1497D00043D199 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		BF196E931A1497D00043D199 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BF196E9B1A1497D00043D199 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		BF196E9E1A1497D00043D199 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		BF196EA41A1497D10043D199 /* Evil HangmanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Evil HangmanTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF196EA91A1497D10043D199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BF196EAA1A1497D10043D199 /* Evil_HangmanTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Evil_HangmanTests.m; sourceTree = "<group>"; };
-		BF196EB41A14A2390043D199 /* words.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = words.plist; path = ../../words.plist; sourceTree = "<group>"; };
-		BF7CC7711A1B76B400EA3A6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BFA665EC1A1A1A02009A6624 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
-		BFA665ED1A1A1A02009A6624 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
-		BFA665EF1A1A1A1A009A6624 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
-		BFA665F01A1A1A1A009A6624 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		BF7CC77C1A1B7D4700EA3A6B /* Evil Hangman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Evil Hangman.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF7CC7801A1B7D4700EA3A6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF7CC7811A1B7D4700EA3A6B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BF7CC7831A1B7D4700EA3A6B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BF7CC7841A1B7D4700EA3A6B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BF7CC7861A1B7D4700EA3A6B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BF7CC7871A1B7D4700EA3A6B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BF7CC78A1A1B7D4700EA3A6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BF7CC78C1A1B7D4700EA3A6B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BF7CC78F1A1B7D4700EA3A6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		BF7CC7951A1B7D4700EA3A6B /* Evil HangmanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Evil HangmanTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF7CC79A1A1B7D4700EA3A6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF7CC79B1A1B7D4700EA3A6B /* Evil_HangmanTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Evil_HangmanTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BF196E881A1497D00043D199 /* Frameworks */ = {
+		BF7CC7791A1B7D4700EA3A6B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BF196EA11A1497D10043D199 /* Frameworks */ = {
+		BF7CC7921A1B7D4700EA3A6B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -65,64 +60,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BF196E821A1497D00043D199 = {
+		BF7CC7731A1B7D4700EA3A6B = {
 			isa = PBXGroup;
 			children = (
-				BF196E8D1A1497D00043D199 /* Evil Hangman */,
-				BF196EA71A1497D10043D199 /* Evil HangmanTests */,
-				BF196E8C1A1497D00043D199 /* Products */,
+				BF7CC77E1A1B7D4700EA3A6B /* Evil Hangman */,
+				BF7CC7981A1B7D4700EA3A6B /* Evil HangmanTests */,
+				BF7CC77D1A1B7D4700EA3A6B /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		BF196E8C1A1497D00043D199 /* Products */ = {
+		BF7CC77D1A1B7D4700EA3A6B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BF196E8B1A1497D00043D199 /* Evil Hangman.app */,
-				BF196EA41A1497D10043D199 /* Evil HangmanTests.xctest */,
+				BF7CC77C1A1B7D4700EA3A6B /* Evil Hangman.app */,
+				BF7CC7951A1B7D4700EA3A6B /* Evil HangmanTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BF196E8D1A1497D00043D199 /* Evil Hangman */ = {
+		BF7CC77E1A1B7D4700EA3A6B /* Evil Hangman */ = {
 			isa = PBXGroup;
 			children = (
-				BF196E921A1497D00043D199 /* AppDelegate.h */,
-				BF196E931A1497D00043D199 /* AppDelegate.m */,
-				BFA665EC1A1A1A02009A6624 /* GameViewController.h */,
-				BFA665ED1A1A1A02009A6624 /* GameViewController.m */,
-				BFA665EF1A1A1A1A009A6624 /* SettingsViewController.h */,
-				BFA665F01A1A1A1A009A6624 /* SettingsViewController.m */,
-				BF7CC7701A1B76B400EA3A6B /* Main.storyboard */,
-				BF196E9B1A1497D00043D199 /* Images.xcassets */,
-				BF196E9D1A1497D00043D199 /* LaunchScreen.xib */,
-				BF196E8E1A1497D00043D199 /* Supporting Files */,
+				BF7CC7831A1B7D4700EA3A6B /* AppDelegate.h */,
+				BF7CC7841A1B7D4700EA3A6B /* AppDelegate.m */,
+				BF7CC7861A1B7D4700EA3A6B /* ViewController.h */,
+				BF7CC7871A1B7D4700EA3A6B /* ViewController.m */,
+				BF7CC7891A1B7D4700EA3A6B /* Main.storyboard */,
+				BF7CC78C1A1B7D4700EA3A6B /* Images.xcassets */,
+				BF7CC78E1A1B7D4700EA3A6B /* LaunchScreen.xib */,
+				BF7CC77F1A1B7D4700EA3A6B /* Supporting Files */,
 			);
 			path = "Evil Hangman";
 			sourceTree = "<group>";
 		};
-		BF196E8E1A1497D00043D199 /* Supporting Files */ = {
+		BF7CC77F1A1B7D4700EA3A6B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BF196EB41A14A2390043D199 /* words.plist */,
-				BF196E8F1A1497D00043D199 /* Info.plist */,
-				BF196E901A1497D00043D199 /* main.m */,
+				BF7CC7801A1B7D4700EA3A6B /* Info.plist */,
+				BF7CC7811A1B7D4700EA3A6B /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		BF196EA71A1497D10043D199 /* Evil HangmanTests */ = {
+		BF7CC7981A1B7D4700EA3A6B /* Evil HangmanTests */ = {
 			isa = PBXGroup;
 			children = (
-				BF196EAA1A1497D10043D199 /* Evil_HangmanTests.m */,
-				BF196EA81A1497D10043D199 /* Supporting Files */,
+				BF7CC79B1A1B7D4700EA3A6B /* Evil_HangmanTests.m */,
+				BF7CC7991A1B7D4700EA3A6B /* Supporting Files */,
 			);
 			path = "Evil HangmanTests";
 			sourceTree = "<group>";
 		};
-		BF196EA81A1497D10043D199 /* Supporting Files */ = {
+		BF7CC7991A1B7D4700EA3A6B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BF196EA91A1497D10043D199 /* Info.plist */,
+				BF7CC79A1A1B7D4700EA3A6B /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -130,13 +122,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BF196E8A1A1497D00043D199 /* Evil Hangman */ = {
+		BF7CC77B1A1B7D4700EA3A6B /* Evil Hangman */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BF196EAE1A1497D10043D199 /* Build configuration list for PBXNativeTarget "Evil Hangman" */;
+			buildConfigurationList = BF7CC79F1A1B7D4700EA3A6B /* Build configuration list for PBXNativeTarget "Evil Hangman" */;
 			buildPhases = (
-				BF196E871A1497D00043D199 /* Sources */,
-				BF196E881A1497D00043D199 /* Frameworks */,
-				BF196E891A1497D00043D199 /* Resources */,
+				BF7CC7781A1B7D4700EA3A6B /* Sources */,
+				BF7CC7791A1B7D4700EA3A6B /* Frameworks */,
+				BF7CC77A1A1B7D4700EA3A6B /* Resources */,
 			);
 			buildRules = (
 			);
@@ -144,46 +136,46 @@
 			);
 			name = "Evil Hangman";
 			productName = "Evil Hangman";
-			productReference = BF196E8B1A1497D00043D199 /* Evil Hangman.app */;
+			productReference = BF7CC77C1A1B7D4700EA3A6B /* Evil Hangman.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BF196EA31A1497D10043D199 /* Evil HangmanTests */ = {
+		BF7CC7941A1B7D4700EA3A6B /* Evil HangmanTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BF196EB11A1497D10043D199 /* Build configuration list for PBXNativeTarget "Evil HangmanTests" */;
+			buildConfigurationList = BF7CC7A21A1B7D4700EA3A6B /* Build configuration list for PBXNativeTarget "Evil HangmanTests" */;
 			buildPhases = (
-				BF196EA01A1497D10043D199 /* Sources */,
-				BF196EA11A1497D10043D199 /* Frameworks */,
-				BF196EA21A1497D10043D199 /* Resources */,
+				BF7CC7911A1B7D4700EA3A6B /* Sources */,
+				BF7CC7921A1B7D4700EA3A6B /* Frameworks */,
+				BF7CC7931A1B7D4700EA3A6B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				BF196EA61A1497D10043D199 /* PBXTargetDependency */,
+				BF7CC7971A1B7D4700EA3A6B /* PBXTargetDependency */,
 			);
 			name = "Evil HangmanTests";
 			productName = "Evil HangmanTests";
-			productReference = BF196EA41A1497D10043D199 /* Evil HangmanTests.xctest */;
+			productReference = BF7CC7951A1B7D4700EA3A6B /* Evil HangmanTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		BF196E831A1497D00043D199 /* Project object */ = {
+		BF7CC7741A1B7D4700EA3A6B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Rick Buchter";
 				TargetAttributes = {
-					BF196E8A1A1497D00043D199 = {
+					BF7CC77B1A1B7D4700EA3A6B = {
 						CreatedOnToolsVersion = 6.1;
 					};
-					BF196EA31A1497D10043D199 = {
+					BF7CC7941A1B7D4700EA3A6B = {
 						CreatedOnToolsVersion = 6.1;
-						TestTargetID = BF196E8A1A1497D00043D199;
+						TestTargetID = BF7CC77B1A1B7D4700EA3A6B;
 					};
 				};
 			};
-			buildConfigurationList = BF196E861A1497D00043D199 /* Build configuration list for PBXProject "Evil Hangman" */;
+			buildConfigurationList = BF7CC7771A1B7D4700EA3A6B /* Build configuration list for PBXProject "Evil Hangman" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -191,30 +183,29 @@
 				en,
 				Base,
 			);
-			mainGroup = BF196E821A1497D00043D199;
-			productRefGroup = BF196E8C1A1497D00043D199 /* Products */;
+			mainGroup = BF7CC7731A1B7D4700EA3A6B;
+			productRefGroup = BF7CC77D1A1B7D4700EA3A6B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BF196E8A1A1497D00043D199 /* Evil Hangman */,
-				BF196EA31A1497D10043D199 /* Evil HangmanTests */,
+				BF7CC77B1A1B7D4700EA3A6B /* Evil Hangman */,
+				BF7CC7941A1B7D4700EA3A6B /* Evil HangmanTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		BF196E891A1497D00043D199 /* Resources */ = {
+		BF7CC77A1A1B7D4700EA3A6B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF196EB51A14A2390043D199 /* words.plist in Resources */,
-				BF196E9F1A1497D00043D199 /* LaunchScreen.xib in Resources */,
-				BF196E9C1A1497D00043D199 /* Images.xcassets in Resources */,
-				BF7CC7721A1B76B400EA3A6B /* Main.storyboard in Resources */,
+				BF7CC78B1A1B7D4700EA3A6B /* Main.storyboard in Resources */,
+				BF7CC7901A1B7D4700EA3A6B /* LaunchScreen.xib in Resources */,
+				BF7CC78D1A1B7D4700EA3A6B /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BF196EA21A1497D10043D199 /* Resources */ = {
+		BF7CC7931A1B7D4700EA3A6B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -224,56 +215,55 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		BF196E871A1497D00043D199 /* Sources */ = {
+		BF7CC7781A1B7D4700EA3A6B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFA665EE1A1A1A02009A6624 /* GameViewController.m in Sources */,
-				BFA665F11A1A1A1A009A6624 /* SettingsViewController.m in Sources */,
-				BF196E941A1497D00043D199 /* AppDelegate.m in Sources */,
-				BF196E911A1497D00043D199 /* main.m in Sources */,
+				BF7CC7881A1B7D4700EA3A6B /* ViewController.m in Sources */,
+				BF7CC7851A1B7D4700EA3A6B /* AppDelegate.m in Sources */,
+				BF7CC7821A1B7D4700EA3A6B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BF196EA01A1497D10043D199 /* Sources */ = {
+		BF7CC7911A1B7D4700EA3A6B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF196EAB1A1497D10043D199 /* Evil_HangmanTests.m in Sources */,
+				BF7CC79C1A1B7D4700EA3A6B /* Evil_HangmanTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		BF196EA61A1497D10043D199 /* PBXTargetDependency */ = {
+		BF7CC7971A1B7D4700EA3A6B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BF196E8A1A1497D00043D199 /* Evil Hangman */;
-			targetProxy = BF196EA51A1497D10043D199 /* PBXContainerItemProxy */;
+			target = BF7CC77B1A1B7D4700EA3A6B /* Evil Hangman */;
+			targetProxy = BF7CC7961A1B7D4700EA3A6B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BF196E9D1A1497D00043D199 /* LaunchScreen.xib */ = {
+		BF7CC7891A1B7D4700EA3A6B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BF196E9E1A1497D00043D199 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-		BF7CC7701A1B76B400EA3A6B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BF7CC7711A1B76B400EA3A6B /* Base */,
+				BF7CC78A1A1B7D4700EA3A6B /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BF7CC78E1A1B7D4700EA3A6B /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF7CC78F1A1B7D4700EA3A6B /* Base */,
+			);
+			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		BF196EAC1A1497D10043D199 /* Debug */ = {
+		BF7CC79D1A1B7D4700EA3A6B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -314,7 +304,7 @@
 			};
 			name = Debug;
 		};
-		BF196EAD1A1497D10043D199 /* Release */ = {
+		BF7CC79E1A1B7D4700EA3A6B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -349,7 +339,7 @@
 			};
 			name = Release;
 		};
-		BF196EAF1A1497D10043D199 /* Debug */ = {
+		BF7CC7A01A1B7D4700EA3A6B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -359,7 +349,7 @@
 			};
 			name = Debug;
 		};
-		BF196EB01A1497D10043D199 /* Release */ = {
+		BF7CC7A11A1B7D4700EA3A6B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -369,7 +359,7 @@
 			};
 			name = Release;
 		};
-		BF196EB21A1497D10043D199 /* Debug */ = {
+		BF7CC7A31A1B7D4700EA3A6B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -388,7 +378,7 @@
 			};
 			name = Debug;
 		};
-		BF196EB31A1497D10043D199 /* Release */ = {
+		BF7CC7A41A1B7D4700EA3A6B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -406,34 +396,32 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BF196E861A1497D00043D199 /* Build configuration list for PBXProject "Evil Hangman" */ = {
+		BF7CC7771A1B7D4700EA3A6B /* Build configuration list for PBXProject "Evil Hangman" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BF196EAC1A1497D10043D199 /* Debug */,
-				BF196EAD1A1497D10043D199 /* Release */,
+				BF7CC79D1A1B7D4700EA3A6B /* Debug */,
+				BF7CC79E1A1B7D4700EA3A6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BF196EAE1A1497D10043D199 /* Build configuration list for PBXNativeTarget "Evil Hangman" */ = {
+		BF7CC79F1A1B7D4700EA3A6B /* Build configuration list for PBXNativeTarget "Evil Hangman" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BF196EAF1A1497D10043D199 /* Debug */,
-				BF196EB01A1497D10043D199 /* Release */,
+				BF7CC7A01A1B7D4700EA3A6B /* Debug */,
+				BF7CC7A11A1B7D4700EA3A6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
-		BF196EB11A1497D10043D199 /* Build configuration list for PBXNativeTarget "Evil HangmanTests" */ = {
+		BF7CC7A21A1B7D4700EA3A6B /* Build configuration list for PBXNativeTarget "Evil HangmanTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BF196EB21A1497D10043D199 /* Debug */,
-				BF196EB31A1497D10043D199 /* Release */,
+				BF7CC7A31A1B7D4700EA3A6B /* Debug */,
+				BF7CC7A41A1B7D4700EA3A6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = BF196E831A1497D00043D199 /* Project object */;
+	rootObject = BF7CC7741A1B7D4700EA3A6B /* Project object */;
 }
