@@ -1,32 +1,43 @@
 //
-//  ViewController.m
+//  SettingsViewController.m
 //  Evil Hangman
 //
-//  Created by Rick Buchter on 18-11-14.
+//  Created by Rick Buchter on 19-11-14.
 //  Copyright (c) 2014 Rick Buchter. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "SettingsViewController.h"
+#import "GameViewController.h"
 
-@interface ViewController ()
+@interface SettingsViewController ()
 //@property (weak, nonatomic) IBOutlet UILabel *sliderNumberOfLettersLabel;
 //@property (weak, nonatomic) IBOutlet UILabel *sliderNumberOfIncorrectGuessesLabel;
 
+
 @end
 
-@implementation ViewController
+@implementation SettingsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.sliderNumberOfLettersLabel.text = @"Number of letters: 5";
-    self.sliderNumberOfIncorrectGuessesLabel.text = @"Number of letters: 7";
-    // Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
 - (IBAction)sliderNumberOfLettersChanged:(UISlider *)sender {
     int progress = lroundf(sender.value);
     self.sliderNumberOfLettersLabel.text = [NSString stringWithFormat:@"Number of letters: %d", progress];

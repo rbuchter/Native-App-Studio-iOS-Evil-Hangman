@@ -14,6 +14,8 @@
 		BF7CC78D1A1B7D4700EA3A6B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF7CC78C1A1B7D4700EA3A6B /* Images.xcassets */; };
 		BF7CC7901A1B7D4700EA3A6B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF7CC78E1A1B7D4700EA3A6B /* LaunchScreen.xib */; };
 		BF7CC79C1A1B7D4700EA3A6B /* Evil_HangmanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7CC79B1A1B7D4700EA3A6B /* Evil_HangmanTests.m */; };
+		BFB3620A1A1CA8E000CFF732 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB362091A1CA8E000CFF732 /* SettingsViewController.m */; };
+		BFB3620D1A1CA92F00CFF732 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB3620C1A1CA92F00CFF732 /* GameViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		BF7CC7951A1B7D4700EA3A6B /* Evil HangmanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Evil HangmanTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF7CC79A1A1B7D4700EA3A6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF7CC79B1A1B7D4700EA3A6B /* Evil_HangmanTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Evil_HangmanTests.m; sourceTree = "<group>"; };
+		BFB362081A1CA8E000CFF732 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		BFB362091A1CA8E000CFF732 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		BFB3620B1A1CA92F00CFF732 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		BFB3620C1A1CA92F00CFF732 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +89,12 @@
 			children = (
 				BF7CC7831A1B7D4700EA3A6B /* AppDelegate.h */,
 				BF7CC7841A1B7D4700EA3A6B /* AppDelegate.m */,
-				BF7CC7861A1B7D4700EA3A6B /* ViewController.h */,
 				BF7CC7871A1B7D4700EA3A6B /* ViewController.m */,
+				BF7CC7861A1B7D4700EA3A6B /* ViewController.h */,
+				BFB362081A1CA8E000CFF732 /* SettingsViewController.h */,
+				BFB362091A1CA8E000CFF732 /* SettingsViewController.m */,
+				BFB3620B1A1CA92F00CFF732 /* GameViewController.h */,
+				BFB3620C1A1CA92F00CFF732 /* GameViewController.m */,
 				BF7CC7891A1B7D4700EA3A6B /* Main.storyboard */,
 				BF7CC78C1A1B7D4700EA3A6B /* Images.xcassets */,
 				BF7CC78E1A1B7D4700EA3A6B /* LaunchScreen.xib */,
@@ -219,9 +229,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFB3620D1A1CA92F00CFF732 /* GameViewController.m in Sources */,
 				BF7CC7881A1B7D4700EA3A6B /* ViewController.m in Sources */,
 				BF7CC7851A1B7D4700EA3A6B /* AppDelegate.m in Sources */,
 				BF7CC7821A1B7D4700EA3A6B /* main.m in Sources */,
+				BFB3620A1A1CA8E000CFF732 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +424,7 @@
 				BF7CC7A11A1B7D4700EA3A6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BF7CC7A21A1B7D4700EA3A6B /* Build configuration list for PBXNativeTarget "Evil HangmanTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +433,7 @@
 				BF7CC7A41A1B7D4700EA3A6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
