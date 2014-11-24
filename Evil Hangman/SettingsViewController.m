@@ -17,17 +17,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-
     
-    // Set the values form the UserDefaults to the settingsview
-    
-    // NumberOfLettersLabel
+    // Set value of numberOfLettersLabel and corrosponding slider
     self.sliderNumerOfLettersLabel.text = [NSString stringWithFormat: @"Number of letters: %ld", (long)[defaults integerForKey:@"numberOfLetters"]];
     self.sliderNumberOfLetters.value = (float)[defaults integerForKey:@"numberOfLetters"];
     
-    // NumberOfIncorrectGuesses
+    // Set value of numberOfIncorrectGuessesLabel and corrosponding slider
     self.sliderNumberOfIncorrectGuessesLabel.text = [NSString stringWithFormat:@"Number of incorrect guesses: %ld", (long)[defaults integerForKey:@"numberOfIncorrectGuesses"]];
     self.sliderNumberOfIncorrectGuesses.value = (float)[defaults integerForKey:@"numberOfIncorrectGuesses"];
     

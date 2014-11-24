@@ -15,12 +15,12 @@ After every new guess switch to the most words. To maximize ability to cheat.
 
 ### Classes
 #### GameViewController
-- newGame, function to start a new game with the last inputed settings. 
-- switchToSettings, action to go the settings screen. 
-- newGameButonPressed, action to start a new game.
-- livesLeft, reference to the label with the amount of lives left. 
-- guessState, reference to the label with the current state of the game. 
-- guessedLetters, reference to the label with the letters already guessed by the user. 
+- newGame, function to start a new game with the last inputed settings. DONE
+- <del>switchToSettings, action to go the settings screen.</del>
+- <del>newGameButonPressed, action to start a new game.</del>
+- livesStateLabel, reference to the label with the amount of lives left. DONE
+- guessStateLabel, reference to the label with the current state of the game. DONE
+- guessedLettersStateLabel, reference to the label with the letters already guessed by the user. DONE
 - letterInput, reference to the input field where the last letter will be displayed.
 
 #### SettingsViewController
@@ -35,8 +35,11 @@ After every new guess switch to the most words. To maximize ability to cheat.
 - updateGuesses, update het label with the guessed letters. 
 
 #### NSUserDefauts 
-- numberOfLetters [integer], on start app does it have a value of 5. 
-- numberOfIncorrectGuesses [integer], on start app does it have a value of 7.
+- numberOfLetters [integer], on start app does it have a value of 5. DONE
+- numberOfIncorrectGuesses [integer], on start app does it have a value of 7. DONE
+- currentGuessState [object], holding the guess state of the current game. DONE
+- currentLivesState [integer], holding the lives stte of the current game. DONE
+- currentGuessedLettersState [object], holding the guessed letters state of the current game. DONE
 
 
 ## Sketches 
