@@ -109,7 +109,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9xV-a5-DsN">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -270,7 +270,7 @@
                                     <action selector="sliderNumberOfLettersChanged:" destination="eaP-80-ssa" eventType="valueChanged" id="sra-jV-wZI"/>
                                 </connections>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of incorrect guesses: 7 " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZ1-Y2-46Q">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of incorrect guesses: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZ1-Y2-46Q">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="XBc-Ua-nEx"/>
@@ -376,7 +376,9 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="sliderNumberOfIncorrectGuesses" destination="stt-ao-feY" id="RuL-RZ-oi6"/>
                         <outlet property="sliderNumberOfIncorrectGuessesLabel" destination="BZ1-Y2-46Q" id="c3k-Gf-4xf"/>
+                        <outlet property="sliderNumberOfLetters" destination="8N3-Do-As0" id="CRT-L9-HzL"/>
                         <outlet property="sliderNumerOfLettersLabel" destination="TLN-sU-XUo" id="mPI-Dd-iDh"/>
                     </connections>
                 </viewController>

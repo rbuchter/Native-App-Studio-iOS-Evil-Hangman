@@ -14,9 +14,23 @@
 
 @implementation SettingsViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
+    
+    // Set the values form the UserDefaults to the settingsview
+    
+    // NumberOfLettersLabel
+    self.sliderNumerOfLettersLabel.text = [NSString stringWithFormat: @"Number of letters: %ld", (long)[defaults integerForKey:@"numberOfLetters"]];
+    self.sliderNumberOfLetters.value = (float)[defaults integerForKey:@"numberOfLetters"];
+    
+    // NumberOfIncorrectGuesses
+    self.sliderNumberOfIncorrectGuessesLabel.text = [NSString stringWithFormat:@"Number of incorrect guesses: %ld", (long)[defaults integerForKey:@"numberOfIncorrectGuesses"]];
+    self.sliderNumberOfIncorrectGuesses.value = (float)[defaults integerForKey:@"numberOfIncorrectGuesses"];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,10 +49,17 @@
 */
 - (IBAction)sliderNumberOfLettersChanged:(UISlider *)sender {
     int progress = (int)lroundf(sender.value);
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger: progress forKey:@"numberOfLetters"];
+    [defaults synchronize];
     self.sliderNumerOfLettersLabel.text = [NSString stringWithFormat:@"Number of letters: %d", progress];
+
 }
 - (IBAction)sliderNumberOfIncorrectGuessesChanged:(UISlider *)sender {
     int progress = (int)lroundf(sender.value);
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger: progress forKey:@"numberOfIncorrectGuesses"];
+    [defaults synchronize];
     self.sliderNumberOfIncorrectGuessesLabel.text = [NSString stringWithFormat:@"Number of incorrect guesses: %d", progress];
 }
 

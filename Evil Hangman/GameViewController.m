@@ -16,6 +16,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults integerForKey:@"numberOfLetters"] == 0){
+        [defaults setInteger:5 forKey:@"numberOfLetters"];
+        [defaults setInteger:7 forKey:@"numberOfIncorrectGuesses"];
+    }
+    
+
     // Do any additional setup after loading the view.
 }
 
