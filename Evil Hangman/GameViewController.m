@@ -16,12 +16,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // Checks if any userDefault are set
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if ([defaults integerForKey:@"numberOfLetters"] == 0){
         [defaults setInteger:5 forKey:@"numberOfLetters"];
         [defaults setInteger:7 forKey:@"numberOfIncorrectGuesses"];
     }
-    
 
     // Do any additional setup after loading the view.
 }
@@ -40,5 +41,7 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+- (IBAction)newGame:(UIButton *)sender {
+    
+}
 @end

@@ -16,6 +16,7 @@
 		BF740FBC1A2350B000B5F7C5 /* Evil_HangmanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF740FBB1A2350B000B5F7C5 /* Evil_HangmanTests.m */; };
 		BF740FC71A2350CE00B5F7C5 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF740FC61A2350CE00B5F7C5 /* SettingsViewController.m */; };
 		BF740FCA1A2350F600B5F7C5 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF740FC91A2350F600B5F7C5 /* GameViewController.m */; };
+		BF740FCE1A2376B100B5F7C5 /* words.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF740FCD1A2376B100B5F7C5 /* words.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		BF740FC61A2350CE00B5F7C5 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = ../SettingsViewController.m; sourceTree = "<group>"; };
 		BF740FC81A2350F600B5F7C5 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = SOURCE_ROOT; };
 		BF740FC91A2350F600B5F7C5 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = SOURCE_ROOT; };
+		BF740FCD1A2376B100B5F7C5 /* words.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = words.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				BF740FA01A2350B000B5F7C5 /* Info.plist */,
+				BF740FCD1A2376B100B5F7C5 /* words.plist */,
 				BF740FA11A2350B000B5F7C5 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -209,6 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF740FCE1A2376B100B5F7C5 /* words.plist in Resources */,
 				BF740FAB1A2350B000B5F7C5 /* Main.storyboard in Resources */,
 				BF740FB01A2350B000B5F7C5 /* LaunchScreen.xib in Resources */,
 				BF740FAD1A2350B000B5F7C5 /* Images.xcassets in Resources */,
