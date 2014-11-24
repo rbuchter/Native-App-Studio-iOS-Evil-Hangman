@@ -34,6 +34,10 @@ After every new guess switch to the most words. To maximize ability to cheat.
 - updateWordList, update word list after new guess
 - updateGuesses, update het label with the guessed letters. 
 
+#### NSUserDefauts 
+- numberOfLetters [integer], on start app does it have a value of 5. 
+- numberOfIncorrectGuesses [integer], on start app does it have a value of 7.
+
 
 ## Sketches 
 ![alt text][id]

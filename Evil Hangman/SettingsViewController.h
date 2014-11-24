@@ -8,11 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingsViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UILabel *sliderNumberOfLettersLabel;
-@property (weak, nonatomic) IBOutlet UILabel *sliderNumberOfIncorrectGuessesLabel;
-
-- (IBAction)sliderNumerOfIncorrectGuessesChanged:(UISlider *)sender;
-- (IBAction)sliderNumberOfLettersChanged:(UISlider *)sender;
+@interface SettingsViewController : UIViewController {
+    IBOutlet UILabel *sliderNumberOfLettersLabel;
+    IBOutlet UILabel *sliderNumberOfIncorrectGuessesLabel;
+}
 
 @end
