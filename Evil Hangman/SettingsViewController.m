@@ -7,14 +7,7 @@
 //
 
 #import "SettingsViewController.h"
-#import "GameViewController.h"
 
-@interface SettingsViewController ()
-//@property (weak, nonatomic) IBOutlet UILabel *sliderNumberOfLettersLabel;
-//@property (weak, nonatomic) IBOutlet UILabel *sliderNumberOfIncorrectGuessesLabel;
-
-
-@end
 
 @implementation SettingsViewController
 
@@ -37,13 +30,12 @@
     // Pass the selected object to the new view controller.
 }
 */
-
 - (IBAction)sliderNumberOfLettersChanged:(UISlider *)sender {
-    int progress = lroundf(sender.value);
+    int progress = (int)lroundf(sender.value);
     self.sliderNumberOfLettersLabel.text = [NSString stringWithFormat:@"Number of letters: %d", progress];
 }
-- (IBAction)sliderNumerOfIncorrectGuessesChanged:(UISlider *)sender {
-    int progress = lroundf(sender.value);
+- (IBAction)sliderNumberOfIncorrectGuessesChanged:(UISlider *)sender {
+    int progress = (int)lroundf(sender.value);
     self.sliderNumberOfIncorrectGuessesLabel.text = [NSString stringWithFormat:@"Number of incorrect guesses: %d", progress];
 }
 

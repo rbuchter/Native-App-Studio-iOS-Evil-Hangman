@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingsViewController : UIViewController {
-    IBOutlet UILabel *sliderNumberOfLettersLabel;
-    IBOutlet UILabel *sliderNumberOfIncorrectGuessesLabel;
-}
+@interface SettingsViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UILabel *sliderNumberOfIncorrectGuessesLabel;
+@property (weak, nonatomic) IBOutlet UILabel *sliderNumberOfLettersLabel;
 
 @end

@@ -90,6 +90,9 @@
                             </navigationBar>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="7" minValue="1" maxValue="26" translatesAutoresizingMaskIntoConstraints="NO" id="AUb-dT-BGL">
                                 <rect key="frame" x="14" y="264" width="572" height="31"/>
+                                <connections>
+                                    <action selector="sliderNumberOfIncorrectGuessesChanged:" destination="rfk-Rv-R4h" eventType="valueChanged" id="3NN-3q-rzH"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of incorrect guesses" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tsz-vK-n3G">
                                 <rect key="frame" x="16" y="224" width="568" height="21"/>
@@ -124,6 +127,9 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="1" maxValue="26" translatesAutoresizingMaskIntoConstraints="NO" id="DYp-NR-FqQ">
                                 <rect key="frame" x="14" y="158" width="572" height="31"/>
+                                <connections>
+                                    <action selector="sliderNumberOfLettersChanged:" destination="rfk-Rv-R4h" eventType="valueChanged" id="uQi-DP-eNG"/>
+                                </connections>
                             </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -147,7 +153,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="sliderNumberOfLettersLabel" destination="03u-Ou-VXA" id="wSf-xm-8M6"/>
+                        <outlet property="sliderNumberOfIncorrectGuessesLabel" destination="Tsz-vK-n3G" id="RLG-hP-tk0"/>
+                        <outlet property="sliderNumberOfLettersLabel" destination="03u-Ou-VXA" id="xge-bV-wob"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6AQ-9b-Exm" userLabel="First Responder" sceneMemberID="firstResponder"/>
