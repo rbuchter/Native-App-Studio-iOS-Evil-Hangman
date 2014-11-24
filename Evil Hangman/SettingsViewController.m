@@ -2,12 +2,15 @@
 //  SettingsViewController.m
 //  Evil Hangman
 //
-//  Created by Rick Buchter on 19-11-14.
+//  Created by Rick Buchter on 24-11-14.
 //  Copyright (c) 2014 Rick Buchter. All rights reserved.
 //
 
 #import "SettingsViewController.h"
 
+@interface SettingsViewController ()
+
+@end
 
 @implementation SettingsViewController
 
@@ -32,7 +35,7 @@
 */
 - (IBAction)sliderNumberOfLettersChanged:(UISlider *)sender {
     int progress = (int)lroundf(sender.value);
-    self.sliderNumberOfLettersLabel.text = [NSString stringWithFormat:@"Number of letters: %d", progress];
+    self.sliderNumerOfLettersLabel.text = [NSString stringWithFormat:@"Number of letters: %d", progress];
 }
 - (IBAction)sliderNumberOfIncorrectGuessesChanged:(UISlider *)sender {
     int progress = (int)lroundf(sender.value);

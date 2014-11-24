@@ -2,12 +2,11 @@
 //  GameViewController.m
 //  Evil Hangman
 //
-//  Created by Rick Buchter on 19-11-14.
+//  Created by Rick Buchter on 24-11-14.
 //  Copyright (c) 2014 Rick Buchter. All rights reserved.
 //
 
 #import "GameViewController.h"
-
 
 @interface GameViewController ()
 
@@ -34,6 +33,5 @@
     // Pass the selected object to the new view controller.
 }
 */
-
 
 @end
