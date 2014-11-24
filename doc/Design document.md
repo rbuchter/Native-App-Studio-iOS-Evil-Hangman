@@ -4,7 +4,7 @@ Design document
 ---------------
 Rick Buchter <br>
 10829911 <br>
-Last update: 17-11-2014
+Last update: 24-11-2014
 
 
 ## Goal 
@@ -21,7 +21,7 @@ After every new guess switch to the most words. To maximize ability to cheat.
 - livesStateLabel, reference to the label with the amount of lives left. DONE
 - guessStateLabel, reference to the label with the current state of the game. DONE
 - guessedLettersStateLabel, reference to the label with the letters already guessed by the user. DONE
-- letterInput, reference to the input field where the last letter will be displayed.
+- letterInput, reference to the input field where the last letter will be displayed. DONE
 
 #### SettingsViewController
 - switchToGame, action to return to the current game and save changed settings for next game. 

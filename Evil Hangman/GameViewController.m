@@ -25,6 +25,7 @@
         [defaults setObject:@"_ _ _ _ _ " forKey:@"currentGuessState"];
         [defaults setInteger:7 forKey:@"currentLivesState"];
         [defaults setObject:@"A B C D E F G H I J K L M N O P Q R S T U V W X Y Z" forKey:@"currentGuessedLettersState"];
+        [defaults synchronize];
     }
 
     // Load the current game form UserDefaults
@@ -72,6 +73,6 @@
     // Updates guessedLettersStateLabel and currentGuessedLettersState in UserDefaults
     [defaults setObject:@"A B C D E F G H I J K L M N O P Q R S T U V W X Y Z" forKey:@"currentGuessedLettersState"];
     self.guessedLettersStateLabel.text = [NSString stringWithFormat:@"%@", [defaults objectForKey:@"currentGuessedLettersState"]];
-    
 }
+
 @end

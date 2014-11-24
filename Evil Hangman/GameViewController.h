@@ -12,6 +12,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *guessedLettersStateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *guessStateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *livesStateLabel;
-
+@property (weak, nonatomic) IBOutlet UITextField *letterInput;
 
 @end
