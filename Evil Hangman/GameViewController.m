@@ -13,6 +13,7 @@
 @end
 
 @implementation GameViewController
+@synthesize letterInput;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -73,6 +74,53 @@
     // Updates guessedLettersStateLabel and currentGuessedLettersState in UserDefaults
     [defaults setObject:@"A B C D E F G H I J K L M N O P Q R S T U V W X Y Z" forKey:@"currentGuessedLettersState"];
     self.guessedLettersStateLabel.text = [NSString stringWithFormat:@"%@", [defaults objectForKey:@"currentGuessedLettersState"]];
+    
+    [defaults synchronize];
+}
+
+// remove keyboard
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    
+    NSLog(@"%@", self.letterInput.text);
+    NSString *input = self.letterInput.text;
+    NSInteger length = [input length];
+    
+    NSCharacterSet *lowercaseLetterSet = [NSCharacterSet lowercaseLetterCharacterSet];
+    NSCharacterSet *uppercaseLetterSet = [NSCharacterSet uppercaseLetterCharacterSet];
+    
+    // checks if letter is alphabetical
+    if ([[input stringByTrimmingCharactersInSet:lowercaseLetterSet] isEqualToString: @""]|| [[input stringByTrimmingCharactersInSet:uppercaseLetterSet] isEqualToString: @""]) {
+        NSLog(@"%s", "ALPHA INPUT");
+        
+        // checks if not more than 1 letter inputted
+        if (length == 1){
+            NSLog(@"%s", "1 LETTER");
+        }
+        else {
+            // alert if input is more than 1 letter
+            UIAlertView *alert = [[UIAlertView alloc]
+                                  initWithTitle:@"No valid input"
+                                  message:@"It's not allowed to input more than one letter a time"
+                                  delegate:self
+                                  cancelButtonTitle:@"Get it!"
+                                  otherButtonTitles:nil];
+            [alert show];
+            NSLog(@"%s", "MORE LETTERS");
+        }
+    }
+    else {
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"No alphabetical input"
+                              message:@"It's not allowed to input other than alphabetical characters"
+                              delegate:self
+                              cancelButtonTitle:@"Get it!"
+                              otherButtonTitles:nil];
+        [alert show];
+        NSLog(@"%s", "NO ALPHA INPUT");
+    }
+    
+    return NO;
 }
 
 @end

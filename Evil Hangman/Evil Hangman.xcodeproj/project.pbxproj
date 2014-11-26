@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		BF740FA21A2350B000B5F7C5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF740FA11A2350B000B5F7C5 /* main.m */; };
 		BF740FA51A2350B000B5F7C5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF740FA41A2350B000B5F7C5 /* AppDelegate.m */; };
-		BF740FA81A2350B000B5F7C5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF740FA71A2350B000B5F7C5 /* ViewController.m */; };
 		BF740FAB1A2350B000B5F7C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF740FA91A2350B000B5F7C5 /* Main.storyboard */; };
 		BF740FAD1A2350B000B5F7C5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF740FAC1A2350B000B5F7C5 /* Images.xcassets */; };
 		BF740FB01A2350B000B5F7C5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF740FAE1A2350B000B5F7C5 /* LaunchScreen.xib */; };
@@ -35,8 +34,6 @@
 		BF740FA11A2350B000B5F7C5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BF740FA31A2350B000B5F7C5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BF740FA41A2350B000B5F7C5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BF740FA61A2350B000B5F7C5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BF740FA71A2350B000B5F7C5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		BF740FAA1A2350B000B5F7C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF740FAC1A2350B000B5F7C5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BF740FAF1A2350B000B5F7C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -91,8 +88,6 @@
 			children = (
 				BF740FA31A2350B000B5F7C5 /* AppDelegate.h */,
 				BF740FA41A2350B000B5F7C5 /* AppDelegate.m */,
-				BF740FA61A2350B000B5F7C5 /* ViewController.h */,
-				BF740FA71A2350B000B5F7C5 /* ViewController.m */,
 				BF740FC81A2350F600B5F7C5 /* GameViewController.h */,
 				BF740FC91A2350F600B5F7C5 /* GameViewController.m */,
 				BF740FC51A2350CE00B5F7C5 /* SettingsViewController.h */,
@@ -234,7 +229,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF740FCA1A2350F600B5F7C5 /* GameViewController.m in Sources */,
-				BF740FA81A2350B000B5F7C5 /* ViewController.m in Sources */,
 				BF740FA51A2350B000B5F7C5 /* AppDelegate.m in Sources */,
 				BF740FA21A2350B000B5F7C5 /* main.m in Sources */,
 				BF740FC71A2350CE00B5F7C5 /* SettingsViewController.m in Sources */,
@@ -428,6 +422,7 @@
 				BF740FC11A2350B000B5F7C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BF740FC21A2350B000B5F7C5 /* Build configuration list for PBXNativeTarget "Evil HangmanTests" */ = {
 			isa = XCConfigurationList;
@@ -436,6 +431,7 @@
 				BF740FC41A2350B000B5F7C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
