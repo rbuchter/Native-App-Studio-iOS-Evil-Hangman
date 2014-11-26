@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF63B6101A25F9C900498000 /* GameEngineController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF63B60F1A25F9C900498000 /* GameEngineController.m */; };
 		BF740FA21A2350B000B5F7C5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF740FA11A2350B000B5F7C5 /* main.m */; };
 		BF740FA51A2350B000B5F7C5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF740FA41A2350B000B5F7C5 /* AppDelegate.m */; };
 		BF740FAB1A2350B000B5F7C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF740FA91A2350B000B5F7C5 /* Main.storyboard */; };
@@ -29,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF63B60E1A25F9C900498000 /* GameEngineController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameEngineController.h; sourceTree = "<group>"; };
+		BF63B60F1A25F9C900498000 /* GameEngineController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameEngineController.m; sourceTree = "<group>"; };
 		BF740F9C1A2350B000B5F7C5 /* Evil Hangman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Evil Hangman.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF740FA01A2350B000B5F7C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF740FA11A2350B000B5F7C5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -88,6 +91,8 @@
 			children = (
 				BF740FA31A2350B000B5F7C5 /* AppDelegate.h */,
 				BF740FA41A2350B000B5F7C5 /* AppDelegate.m */,
+				BF63B60E1A25F9C900498000 /* GameEngineController.h */,
+				BF63B60F1A25F9C900498000 /* GameEngineController.m */,
 				BF740FC81A2350F600B5F7C5 /* GameViewController.h */,
 				BF740FC91A2350F600B5F7C5 /* GameViewController.m */,
 				BF740FC51A2350CE00B5F7C5 /* SettingsViewController.h */,
@@ -228,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF63B6101A25F9C900498000 /* GameEngineController.m in Sources */,
 				BF740FCA1A2350F600B5F7C5 /* GameViewController.m in Sources */,
 				BF740FA51A2350B000B5F7C5 /* AppDelegate.m in Sources */,
 				BF740FA21A2350B000B5F7C5 /* main.m in Sources */,
