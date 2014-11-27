@@ -11,43 +11,38 @@
 
 @interface GameViewController ()
 
+
+
 @end
 
 @implementation GameViewController
 @synthesize letterInput;
 
-//game instance = [[GameEngineController alloc] init];
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    GameEngineController *Game = [GameEngineController new];
+
     
     // Checks if any userDefault are set
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if ([defaults integerForKey:@"numberOfLetters"] == 0){
         [defaults setInteger:5 forKey:@"numberOfLetters"];
         [defaults setInteger:7 forKey:@"numberOfIncorrectGuesses"];
-        [defaults setObject: [NSMutableArray arrayWithObjects:@"_", @"_", @"_", @"_", @"_", nil] forKey:@"currentGuessState"];
-        [defaults setInteger:7 forKey:@"currentLivesState"];
+        [defaults setObject: [Game NewGuessState] forKey:@"currentGuessState"];
+        [defaults setInteger:[defaults integerForKey:@"numberOfIncorrectGuesses"] forKey:@"currentLivesState"];
         [defaults setObject: [NSMutableArray arrayWithObjects:@"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J", @"K", @"L", @"M", @"N", @"O", @"P", @"Q", @"R", @"S", @"T", @"U", @"V", @"W", @"X", @"Y", @"Z", nil] forKey:@"currentGuessedLettersState"];
         [defaults synchronize];
     }
     
-    // Create string based on array with letters
-    NSString *guessedLettersState = @"";
-    NSString *letter;
-    for (letter in [defaults objectForKey:@"currentGuessedLettersState"]){
-        guessedLettersState = [guessedLettersState stringByAppendingFormat:@"%@ ", letter];
-    }
-    GameEngineController *Game = [GameEngineController new];
-    [Game textPrint];
+    
+   
     
     
     // Load the current game form UserDefaults
-    self.guessedLettersStateLabel.text =  guessedLettersState;
+    self.guessedLettersStateLabel.text =  [Game GenerateGuessedLetterState];
     self.livesStateLabel.text = [NSString stringWithFormat: @"%ld", (long)[defaults integerForKey:@"currentLivesState"]];
-    self.guessStateLabel.text = [NSString stringWithFormat:@"%@", [defaults objectForKey:@"currentGuessState"]];
- 
+    self.guessStateLabel.text = [Game GenerateGuessState];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -74,28 +69,16 @@
     // Save currentLivesState to UserDefaults
     [defaults setInteger: [defaults integerForKey:@"numberOfIncorrectGuesses"] forKey:@"currentLivesState"];
     
-
-    // Creates a string with placeholders '_' for the letters of the word to guess
-    NSString *guessState = @"";
-    for (int i = 1; i <= (long)[defaults integerForKey:@"numberOfLetters"]; i++)
-    {
-        guessState = [guessState stringByAppendingFormat:@"_ "];
-        
-    }
+    GameEngineController *Game = [GameEngineController new];
     
     // Updates guessStateLabel and currentGuessState in UserDefaults
-    self.guessStateLabel.text = [NSString stringWithFormat:@"%@", guessState];
-    [defaults setObject:guessState forKey:@"currentGuessState"];
+    self.guessStateLabel.text = [Game GenerateGuessState];
+    [defaults setObject:[Game GenerateGuessState] forKey:@"currentGuessState"];
     
     // Updates guessedLettersStateLabel and currentGuessedLettersState in UserDefaults
     [defaults setObject: [NSMutableArray arrayWithObjects:@"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J", @"K", @"L", @"M", @"N", @"O", @"P", @"Q", @"R", @"S", @"T", @"U", @"V", @"W", @"X", @"Y", @"Z", nil] forKey:@"currentGuessedLettersState"];
-    
-    NSString *guessedLettersState = @"";
-    NSString *letter;
-    for (letter in [defaults objectForKey:@"currentGuessedLettersState"])
-        guessedLettersState = [guessedLettersState stringByAppendingFormat:@"%@ ", letter];
 
-    self.guessedLettersStateLabel.text =  guessedLettersState;
+    self.guessedLettersStateLabel.text =  [Game GenerateGuessedLetterState];
     
     [defaults synchronize];
 }
@@ -103,6 +86,10 @@
 //-(void)updateGuessLabel {
 //    NSString *temp = new String;
 //}
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.letterInput resignFirstResponder];
+}
+
 
 // remove keyboard and process input
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
