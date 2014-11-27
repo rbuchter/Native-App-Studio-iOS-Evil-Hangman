@@ -10,10 +10,6 @@
 
 @interface GameEngineController : NSObject
 
-- (NSString*)GenerateGuessedLetterState;
-- (NSString*)GenerateGuessState;
-- (NSMutableArray*)NewGuessState;
-
 
 // public values
 @property (readonly) NSString *firstName;
