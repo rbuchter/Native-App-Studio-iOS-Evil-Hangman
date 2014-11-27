@@ -10,11 +10,12 @@
 
 @interface SettingsViewController : UIViewController
 
-// slider labels outles
-@property (weak, nonatomic) IBOutlet UILabel *sliderNumerOfLettersLabel;
-@property (weak, nonatomic) IBOutlet UILabel *sliderNumberOfIncorrectGuessesLabel;
+// Slider labels outles
+@property (strong, nonatomic) IBOutlet UILabel *sliderNumerOfLettersLabel;
+@property (strong, nonatomic) IBOutlet UILabel *sliderNumberOfIncorrectGuessesLabel;
 
-// slider outlets
-@property (weak, nonatomic) IBOutlet UISlider *sliderNumberOfLetters;
-@property (weak, nonatomic) IBOutlet UISlider *sliderNumberOfIncorrectGuesses;
+// Slider outlets
+@property (strong, nonatomic) IBOutlet UISlider *sliderNumberOfLetters;
+@property (strong, nonatomic) IBOutlet UISlider *sliderNumberOfIncorrectGuesses;
+
 @end

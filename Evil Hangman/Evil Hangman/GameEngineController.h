@@ -10,11 +10,19 @@
 
 @interface GameEngineController : NSObject
 
+- (BOOL)inputSizeCheck: (NSString *) input;
+- (BOOL)inputFormatCheck: (NSString *) input;
+- (BOOL) inputLettersArrayCheck: (NSString *) input;
 
-// public values
-@property (readonly) NSString *firstName;
+- (void)lettersUpdate: (NSString *) input;
+- (void)wordUpdate;
 
+- (NSArray *)newLettersArray;
+- (NSString *)newLettersString;
 
-- (void)textPrint;
+- (NSArray *)newWordArray;
+- (NSString *)newWordString;
+
+- (NSString *)newLivesString; 
 
 @end

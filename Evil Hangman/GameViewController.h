@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface GameViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UILabel *guessedLettersStateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *guessStateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *livesStateLabel;
-@property (weak, nonatomic) IBOutlet UITextField *letterInput;
+
+
+@property (strong, nonatomic) IBOutlet UILabel *lettersLabel;
+@property (strong, nonatomic) IBOutlet UILabel *wordLabel;
+@property (strong, nonatomic) IBOutlet UILabel *livesLabel;
+@property (strong, nonatomic) IBOutlet UITextField *letterInput;
 
 @end

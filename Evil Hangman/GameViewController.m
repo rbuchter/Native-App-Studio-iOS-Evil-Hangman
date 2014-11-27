@@ -22,31 +22,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Checks if any userDefault are set
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    GameEngineController *currentGame = [[GameEngineController alloc] init];
+    
+    // Checks if any userDefault are set
     if ([defaults integerForKey:@"numberOfLetters"] == 0){
         [defaults setInteger:5 forKey:@"numberOfLetters"];
         [defaults setInteger:7 forKey:@"numberOfIncorrectGuesses"];
-        [defaults setObject: [NSMutableArray arrayWithObjects:@"_", @"_", @"_", @"_", @"_", nil] forKey:@"currentGuessState"];
-        [defaults setInteger:7 forKey:@"currentLivesState"];
-        [defaults setObject: [NSMutableArray arrayWithObjects:@"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J", @"K", @"L", @"M", @"N", @"O", @"P", @"Q", @"R", @"S", @"T", @"U", @"V", @"W", @"X", @"Y", @"Z", nil] forKey:@"currentGuessedLettersState"];
+        [currentGame newWordArray];
+        [defaults setInteger:7 forKey:@"currentlives"];
+        [currentGame newLettersArray];
         [defaults synchronize];
     }
     
-    // Create string based on array with letters
-    NSString *guessedLettersState = @"";
-    NSString *letter;
-    for (letter in [defaults objectForKey:@"currentGuessedLettersState"]){
-        guessedLettersState = [guessedLettersState stringByAppendingFormat:@"%@ ", letter];
-    }
-    GameEngineController *Game = [GameEngineController new];
-    [Game textPrint];
-    
-    
-    // Load the current game form UserDefaults
-    self.guessedLettersStateLabel.text =  guessedLettersState;
-    self.livesStateLabel.text = [NSString stringWithFormat: @"%ld", (long)[defaults integerForKey:@"currentLivesState"]];
-    self.guessStateLabel.text = [NSString stringWithFormat:@"%@", [defaults objectForKey:@"currentGuessState"]];
+    // Load the current game form UserDefaults and uses GameEngine for string creation
+    self.lettersLabel.text =  [currentGame newLettersString];
+    self.wordLabel.text = [currentGame newWordString];
+    self.livesLabel.text = [currentGame newLivesString];
  
 }
 
@@ -68,80 +60,61 @@
 // start new game with variable form UserDefaults
 - (IBAction)newGame:(UIButton *)sender {
     
-    // Updates livesStateLabel and currentLivesState in UserDefaults
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    self.livesStateLabel.text = [NSString stringWithFormat: @"%ld", (long)[defaults integerForKey:@"numberOfIncorrectGuesses"]];
-    // Save currentLivesState to UserDefaults
-    [defaults setInteger: [defaults integerForKey:@"numberOfIncorrectGuesses"] forKey:@"currentLivesState"];
+    GameEngineController *currentGame = [[GameEngineController alloc] init];
     
-
-    // Creates a string with placeholders '_' for the letters of the word to guess
-    NSString *guessState = @"";
-    for (int i = 1; i <= (long)[defaults integerForKey:@"numberOfLetters"]; i++)
-    {
-        guessState = [guessState stringByAppendingFormat:@"_ "];
-        
-    }
+    // Create new array's in UserDefaults for the word and letters
+    [currentGame newLettersArray];
+    [currentGame newWordArray];
     
-    // Updates guessStateLabel and currentGuessState in UserDefaults
-    self.guessStateLabel.text = [NSString stringWithFormat:@"%@", guessState];
-    [defaults setObject:guessState forKey:@"currentGuessState"];
+    self.lettersLabel.text = [currentGame newLettersString];
+    self.wordLabel.text = [currentGame newWordString];
+    self.livesLabel.text = [currentGame newLivesString];
     
-    // Updates guessedLettersStateLabel and currentGuessedLettersState in UserDefaults
-    [defaults setObject: [NSMutableArray arrayWithObjects:@"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J", @"K", @"L", @"M", @"N", @"O", @"P", @"Q", @"R", @"S", @"T", @"U", @"V", @"W", @"X", @"Y", @"Z", nil] forKey:@"currentGuessedLettersState"];
-    
-    NSString *guessedLettersState = @"";
-    NSString *letter;
-    for (letter in [defaults objectForKey:@"currentGuessedLettersState"])
-        guessedLettersState = [guessedLettersState stringByAppendingFormat:@"%@ ", letter];
-
-    self.guessedLettersStateLabel.text =  guessedLettersState;
-    
-    [defaults synchronize];
 }
 
 //-(void)updateGuessLabel {
 //    NSString *temp = new String;
 //}
 
-// remove keyboard and process input
+
+// Removes keyboard if touched outside keyboard
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.letterInput resignFirstResponder];
+}
+
+// Remove keyboard and process input
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     
-    NSLog(@"%@", self.letterInput.text);
-    NSString *input = self.letterInput.text;
-    NSInteger length = [input length];
+    GameEngineController *currentGame = [[GameEngineController alloc] init];
     
-    NSCharacterSet *lowercaseLetterSet = [NSCharacterSet lowercaseLetterCharacterSet];
-    NSCharacterSet *uppercaseLetterSet = [NSCharacterSet uppercaseLetterCharacterSet];
+    NSString *input;
+    input = [self.letterInput.text uppercaseString];
     
-    
-    // checks if not more than 1 character inputted
-    if (length == 1){
-        NSLog(@"%s", "1 LETTER");
+    // Process alphabetical input with 1 character
+    if ([currentGame inputSizeCheck:input] && [currentGame inputFormatCheck: input]){
         
-        // checks if letter is alphabetical
-        if ([[input stringByTrimmingCharactersInSet:lowercaseLetterSet] isEqualToString: @""] || [[input stringByTrimmingCharactersInSet:uppercaseLetterSet] isEqualToString: @""]) {
-            NSLog(@"%s", "ALPHA INPUT");
+        // Check if letter is already guessed
+        if ([currentGame inputLettersArrayCheck:input]) {
             
-            // process input
-            
+            // Removes letter from array
+            [currentGame lettersUpdate:input];
+            self.lettersLabel.text = [currentGame newLettersString];
         }
         
         else {
             UIAlertView *alert = [[UIAlertView alloc]
-                                  initWithTitle:@"No alphabetical input"
-                                  message:@"It's not allowed to input other than alphabetical characters"
+                                  initWithTitle:@"Already guessed"
+                                  message:@"This letter is already guessed, try another one"
                                   delegate:self
                                   cancelButtonTitle:@"Get it!"
                                   otherButtonTitles:nil];
             [alert show];
-            NSLog(@"%s", "NO ALPHA INPUT");
         }
     }
     
-    else {
-        // alert if input is more than 1 letter
+    // Shows alert if input is not the right size of characters
+    else if (![currentGame inputSizeCheck:input]) {
         UIAlertView *alert = [[UIAlertView alloc]
                               initWithTitle:@"No valid input"
                               message:@"It's not allowed to input more than one letter a time"
@@ -149,10 +122,20 @@
                               cancelButtonTitle:@"Get it!"
                               otherButtonTitles:nil];
         [alert show];
-        NSLog(@"%s", "MORE LETTERS");
     }
     
-    // empty text input field
+    // Shows alert if input is not the correct format
+    else if (![currentGame inputFormatCheck: input]) {
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"No alphabetical input"
+                              message:@"It's not allowed to input other than basic alphabetical characters"
+                              delegate:self
+                              cancelButtonTitle:@"Get it!"
+                              otherButtonTitles:nil];
+        [alert show];
+    }
+
+    // Empty input field
     self.letterInput.text = @"";
     return NO;
 }
