@@ -10,6 +10,8 @@
 
 @interface GameEngineController : NSObject
 
+- (void)loadWords; 
+
 - (BOOL)inputSizeCheck: (NSString *) input;
 - (BOOL)inputFormatCheck: (NSString *) input;
 - (BOOL) inputLettersArrayCheck: (NSString *) input;
@@ -23,6 +25,8 @@
 - (NSArray *)newWordArray;
 - (NSString *)newWordString;
 
-- (NSString *)newLivesString; 
+- (NSInteger *)newLivesInteger;
+- (NSString *)newLivesString;
+- (void)livesUpdate;
 
 @end

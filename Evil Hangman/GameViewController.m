@@ -29,16 +29,17 @@
     if ([defaults integerForKey:@"numberOfLetters"] == 0){
         [defaults setInteger:5 forKey:@"numberOfLetters"];
         [defaults setInteger:7 forKey:@"numberOfIncorrectGuesses"];
-        [currentGame newWordArray];
-        [defaults setInteger:7 forKey:@"currentlives"];
+        
         [currentGame newLettersArray];
+        [currentGame newWordArray];
+        [currentGame newLivesInteger];
         [defaults synchronize];
+        
+        [currentGame loadWords];
     }
     
-    // Load the current game form UserDefaults and uses GameEngine for string creation
-    self.lettersLabel.text =  [currentGame newLettersString];
-    self.wordLabel.text = [currentGame newWordString];
-    self.livesLabel.text = [currentGame newLivesString];
+    // updates all labels
+    [self updateLables];
  
 }
 
@@ -65,10 +66,12 @@
     // Create new array's in UserDefaults for the word and letters
     [currentGame newLettersArray];
     [currentGame newWordArray];
+    [currentGame newLivesInteger];
     
-    self.lettersLabel.text = [currentGame newLettersString];
-    self.wordLabel.text = [currentGame newWordString];
-    self.livesLabel.text = [currentGame newLivesString];
+    // updates all labels
+    [self updateLables];
+    
+    [currentGame loadWords];
     
 }
 
@@ -99,7 +102,10 @@
             
             // Removes letter from array
             [currentGame lettersUpdate:input];
-            self.lettersLabel.text = [currentGame newLettersString];
+            [currentGame livesUpdate];
+            
+            // Update labels
+            [self updateLables];
         }
         
         else {
@@ -138,6 +144,16 @@
     // Empty input field
     self.letterInput.text = @"";
     return NO;
+}
+
+// Function updates all labels
+- (void) updateLables {
+    
+    GameEngineController *currentGame = [[GameEngineController alloc] init];
+    
+    self.lettersLabel.text = [currentGame newLettersString];
+    self.wordLabel.text = [currentGame newWordString];
+    self.livesLabel.text = [currentGame newLivesString];
 }
 
 @end

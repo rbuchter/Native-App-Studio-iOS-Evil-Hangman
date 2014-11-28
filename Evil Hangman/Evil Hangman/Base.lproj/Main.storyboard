@@ -83,6 +83,25 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ayh-KM-fZX">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="OPK-67-XaA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="OPK-67-XaA"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="OPK-67-XaA"/>
+                                    </mask>
+                                </variation>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s2n-9D-Jrc">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
@@ -93,7 +112,7 @@
                                         <variation key="heightClass=regular-widthClass=compact" constant="30"/>
                                     </constraint>
                                 </constraints>
-                                <state key="normal" image="add63">
+                                <state key="normal" image="add63" backgroundImage="add63">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -169,25 +188,6 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="cQr-B3-ZbN"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ayh-KM-fZX">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="OPK-67-XaA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="OPK-67-XaA"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="OPK-67-XaA"/>
-                                    </mask>
-                                </variation>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -227,11 +227,11 @@
                                 <exclude reference="A3o-tO-HGq"/>
                                 <exclude reference="Irt-b5-oHK"/>
                                 <exclude reference="g5t-QJ-0CR"/>
+                                <exclude reference="Ayh-KM-fZX"/>
                                 <exclude reference="s2n-9D-Jrc"/>
                                 <exclude reference="BFv-m1-Cqd"/>
                                 <exclude reference="5eN-Tz-3be"/>
                                 <exclude reference="9xV-a5-DsN"/>
-                                <exclude reference="Ayh-KM-fZX"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="p0m-ic-w5B"/>
@@ -267,11 +267,11 @@
                             <mask key="subviews">
                                 <include reference="Irt-b5-oHK"/>
                                 <include reference="g5t-QJ-0CR"/>
+                                <include reference="Ayh-KM-fZX"/>
                                 <include reference="s2n-9D-Jrc"/>
                                 <include reference="BFv-m1-Cqd"/>
                                 <include reference="5eN-Tz-3be"/>
                                 <include reference="9xV-a5-DsN"/>
-                                <include reference="Ayh-KM-fZX"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="p0m-ic-w5B"/>
