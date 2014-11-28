@@ -101,6 +101,7 @@
         if ([currentGame inputLettersArrayCheck:input]) {
             
             // Removes letter from array
+            [currentGame wordUpdate:input];
             [currentGame lettersUpdate:input];
             [currentGame livesUpdate];
             

@@ -8,7 +8,12 @@
 
 #import "GameEngineController.h"
 
-@implementation GameEngineController
+@implementation GameEngineController {
+    
+//    NSUserDefaults *defaults; 
+}
+
+
 
 - (void)loadWords {
     
@@ -94,8 +99,60 @@
 }
 
 //
-- (void)wordUpdate {
+- (void)wordUpdate: (NSString *) input {
     
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSMutableArray *currentWordArray = [defaults objectForKey:@"currentWordArray"];
+    NSString *word;
+    NSMutableDictionary *wordDictionary = [NSMutableDictionary dictionary];
+    
+    for (word in currentWordArray)
+    {
+        NSString *key = @"";
+        NSMutableArray *wordArray;
+        
+        // Loops through characters word
+        for (NSInteger charIdx=0; charIdx<word.length; charIdx++)
+        {
+            NSString *character = [NSString stringWithFormat:@"%C",[word characterAtIndex:charIdx]];
+            if([character isEqualToString: input])
+            {
+                key = [key stringByAppendingFormat:@"%@", character];
+            }
+            else
+            {
+                key = [key stringByAppendingFormat:@"_"];
+            }
+        }
+        
+        // Add values to dictionary
+        if ([[wordDictionary valueForKey:key] count] == 0){
+            wordArray = [[NSMutableArray alloc]init];
+        }
+        
+        else {
+            wordArray = [wordDictionary valueForKey:key];
+        }
+        [wordArray addObject: word];
+        [wordDictionary setObject: wordArray forKey: key];
+        
+    }
+    
+    NSString *key;
+    NSString *item;
+    for (key in wordDictionary)
+    {
+        for(item in key)
+        {
+            NSLog(@"%@");
+        }
+    }
+    
+    
+    NSLog(@"%@", wordDictionary);
+//    NSLog(@"%@", currentWordArray);
+
 }
 
 - (void)livesUpdate {

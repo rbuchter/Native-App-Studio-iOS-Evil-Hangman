@@ -17,7 +17,7 @@
 - (BOOL) inputLettersArrayCheck: (NSString *) input;
 
 - (void)lettersUpdate: (NSString *) input;
-- (void)wordUpdate;
+- (void)wordUpdate: (NSString *) input;
 
 - (NSArray *)newLettersArray;
 - (NSString *)newLettersString;
