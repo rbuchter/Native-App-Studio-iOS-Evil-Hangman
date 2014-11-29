@@ -139,18 +139,61 @@
         
     }
     
-    NSString *key;
-    NSString *item;
-    for (key in wordDictionary)
+    NSString *keyDictionary;
+    int sizeMaxWordArray = 0;
+    NSString *keyMaxWordArray;
+    
+    // Loop through dictionary
+    for (keyDictionary in wordDictionary)
     {
-        for(item in key)
+        int sizeArray = 0;
+        
+        // Count number of words in array
+        for(word in [wordDictionary objectForKey: keyDictionary])
         {
-            NSLog(@"%@");
+            sizeArray += 1;
+        }
+        
+        // Change value if size of wordArray is bigger than current one
+        if (sizeMaxWordArray < sizeArray) {
+            sizeMaxWordArray = sizeArray;
+            keyMaxWordArray = keyDictionary;
+        }
+    }
+    NSLog(@"%d", sizeMaxWordArray);
+    NSLog(@"%@", keyMaxWordArray);
+    
+    
+    // Update UserDefaults
+    [defaults setObject: [wordDictionary objectForKey: keyMaxWordArray] forKey:@"currentWordArray"];
+    
+    
+    
+    NSMutableArray *currentWord  = [[defaults objectForKey:@"currentWordState"]mutableCopy];
+    
+    for (NSInteger charIdx=0; charIdx<keyMaxWordArray.length; charIdx++)
+    {
+        NSString *character = [NSString stringWithFormat:@"%C",[keyMaxWordArray characterAtIndex:charIdx]];
+        
+        
+        if([character isEqualToString: @"_"])
+        {
+            NSLog(@"EQUAL");
+        }
+        else
+        {
+            NSLog(@"NOT EQUAL");
+//            [currentWord insertObject: character atIndex: charIdx];
+            [currentWord replaceObjectAtIndex:charIdx withObject:character];
         }
     }
     
+    NSLog(@"%@", currentWord);
+    [defaults setObject:currentWord forKey:@"currentWordState"];
+
+    NSLog(@"%@", [self newWordString]);
     
-    NSLog(@"%@", wordDictionary);
+//    NSLog(@"%@", wordDictionary);
 //    NSLog(@"%@", currentWordArray);
 
 }
