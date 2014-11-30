@@ -30,6 +30,31 @@ After every new guess switch to the most words. To maximize ability to cheat.
 - incorrentGuesses, reference to the label that displays the current state of the slider. 
 
 #### GameEngineController
+- livesCheck
+
+- **wordsListLoad**, loads words.plist into array and extract array with words of right size. [void] [private]
+
+- inputSizeCheck, checks if input is the right size of 1 character. [BOOL] [public]
+- inputFormatCheck, checks if input only contains alphabetical characters (A-Z). [BOOL] [public]
+- inputLettersArrayCheck, checks if input is in array 'currentLettersState' in UserDefaults. [BOOL] [public] 
+
+- **lettersUpdate**, updates 'currentLettersState' in UserDefaults by removing guessed letter form array. [void] [public] << PRIVATE?
+- **wordUpdate**, 
+- **livesUpdate**, updates 'currentLives' in UserDefaults with lives decreased by 1. [void] [private]
+
+- **newGame**, sets all UserDefaults to start a new game based on settings. [void] [public]
+
+- **newLetterArray**, sets 'currentLettersState' to value of array with characters A-Z in UserDefauls. [void] [private]
+- **newLetterString**, creates string of array of 'currentLettersState' in UserDefaults. [string] [public]
+
+- **newWordArray**, sets 'currentWordState' to array with placeholders '_' for the letters to be guessed,
+based on 'numberOfLetters' in UserDefaults. [void] [private]
+- **newWordString**, creates string of array 'currentWordState' in UserDefaults. [string] [public]
+
+- **newLivesInteger**, sets 'currentLives' to value of 'numberOfIncorrectGuesses' in UserDefauls. [void] [private]
+- **newLivesString**, creates string of 'currentLives' in UserDefaults. [string] [public]
+
+
 - updateAmountOfGuesses, function update amount of guesses after last guess.
 - updateWordList, update word list after new guess
 - updateGuesses, update het label with the guessed letters. 
@@ -37,9 +62,11 @@ After every new guess switch to the most words. To maximize ability to cheat.
 #### NSUserDefauts 
 - numberOfLetters [integer], on start app does it have a value of 5. DONE
 - numberOfIncorrectGuesses [integer], on start app does it have a value of 7. DONE
-- currentGuessState [object], holding the guess state of the current game. DONE
-- currentLivesState [integer], holding the lives stte of the current game. DONE
-- currentGuessedLettersState [object], holding the guessed letters state of the current game. DONE
+
+- currentWordState [object], array with characters holding the guess state of the current game. DONE
+- currentLives [integer], holding the lives state of the current game. DONE
+- currentLettersState [object], array with letters holding the guessed letters state of the current game. DONE
+- currentWordArray [object], array with words currenlty used in the game. DONE
 
 
 ## Sketches 

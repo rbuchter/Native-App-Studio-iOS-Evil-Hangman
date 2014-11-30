@@ -9,7 +9,12 @@
 #import "GameViewController.h"
 #import "GameEngineController.h"
 
-@interface GameViewController ()
+@interface GameViewController () {
+    
+    NSUserDefaults *defaults;
+    GameEngineController *Game;
+    
+}
 
 @end
 
@@ -22,24 +27,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    GameEngineController *currentGame = [[GameEngineController alloc] init];
+    defaults = [NSUserDefaults standardUserDefaults];
+    Game = [[GameEngineController alloc] init];
     
     // Checks if any userDefault are set
     if ([defaults integerForKey:@"numberOfLetters"] == 0){
         [defaults setInteger:5 forKey:@"numberOfLetters"];
         [defaults setInteger:7 forKey:@"numberOfIncorrectGuesses"];
         
-        [currentGame newLettersArray];
-        [currentGame newWordArray];
-        [currentGame newLivesInteger];
+        [Game newGame];
         [defaults synchronize];
-        
-        [currentGame loadWords];
     }
     
     // updates all labels
-    [self updateLables];
+    [self updateLabels];
  
 }
 
@@ -61,17 +62,13 @@
 // start new game with variable form UserDefaults
 - (IBAction)newGame:(UIButton *)sender {
     
-    GameEngineController *currentGame = [[GameEngineController alloc] init];
+    Game = [[GameEngineController alloc] init];
     
     // Create new array's in UserDefaults for the word and letters
-    [currentGame newLettersArray];
-    [currentGame newWordArray];
-    [currentGame newLivesInteger];
+    [Game newGame ];
     
     // updates all labels
-    [self updateLables];
-    
-    [currentGame loadWords];
+    [self updateLabels];
     
 }
 
@@ -89,72 +86,94 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     
-    GameEngineController *currentGame = [[GameEngineController alloc] init];
+    Game = [[GameEngineController alloc] init];
     
-    NSString *input;
-    input = [self.letterInput.text uppercaseString];
-    
-    // Process alphabetical input with 1 character
-    if ([currentGame inputSizeCheck:input] && [currentGame inputFormatCheck: input]){
+    if ([Game livesCheck]) {
+        NSString *input;
+        input = [self.letterInput.text uppercaseString];
         
-        // Check if letter is already guessed
-        if ([currentGame inputLettersArrayCheck:input]) {
+        // Process alphabetical input with 1 character
+        if ([Game inputSizeCheck:input] && [Game inputFormatCheck: input]){
             
-            // Removes letter from array
-            [currentGame wordUpdate:input];
-            [currentGame lettersUpdate:input];
-            [currentGame livesUpdate];
+            // Check if letter is already guessed
+            if ([Game inputLettersArrayCheck:input]) {
+                
+                // Removes letter from array
+                [Game wordUpdate:input];
+                [Game lettersUpdate:input];
+                
+                // Update labels
+                [self updateLabels];
+            }
             
-            // Update labels
-            [self updateLables];
+            else {
+                UIAlertView *alert = [[UIAlertView alloc]
+                                      initWithTitle:@"Already guessed"
+                                      message:@"This letter is already guessed, try another one"
+                                      delegate:self
+                                      cancelButtonTitle:@"Get it!"
+                                      otherButtonTitles:nil];
+                [alert show];
+            }
         }
         
-        else {
+        // Shows alert if input is not the right size of characters
+        else if (![Game inputSizeCheck:input]) {
             UIAlertView *alert = [[UIAlertView alloc]
-                                  initWithTitle:@"Already guessed"
-                                  message:@"This letter is already guessed, try another one"
+                                  initWithTitle:@"No valid input"
+                                  message:@"It's not allowed to input more than one letter a time"
                                   delegate:self
                                   cancelButtonTitle:@"Get it!"
                                   otherButtonTitles:nil];
             [alert show];
         }
+        
+        // Shows alert if input is not the correct format
+        else if (![Game inputFormatCheck: input]) {
+            UIAlertView *alert = [[UIAlertView alloc]
+                                  initWithTitle:@"No alphabetical input"
+                                  message:@"It's not allowed to input other than basic alphabetical characters"
+                                  delegate:self
+                                  cancelButtonTitle:@"Get it!"
+                                  otherButtonTitles:nil];
+            [alert show];
+        }
+        
     }
-    
-    // Shows alert if input is not the right size of characters
-    else if (![currentGame inputSizeCheck:input]) {
+    else {
         UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle:@"No valid input"
-                              message:@"It's not allowed to input more than one letter a time"
+                              initWithTitle:@"You lose!"
+                              message:@"Some people make it.."
                               delegate:self
-                              cancelButtonTitle:@"Get it!"
-                              otherButtonTitles:nil];
+                              cancelButtonTitle:@"Cancel"
+                              otherButtonTitles:@"Start new game!",nil];
         [alert show];
+        
+        [self updateLabels];
     }
-    
-    // Shows alert if input is not the correct format
-    else if (![currentGame inputFormatCheck: input]) {
-        UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle:@"No alphabetical input"
-                              message:@"It's not allowed to input other than basic alphabetical characters"
-                              delegate:self
-                              cancelButtonTitle:@"Get it!"
-                              otherButtonTitles:nil];
-        [alert show];
-    }
-
-    // Empty input field
-    self.letterInput.text = @"";
     return NO;
 }
 
+- (void) alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        
+        [Game newGame];
+        [self updateLabels];
+    }
+}
+
 // Function updates all labels
-- (void) updateLables {
+- (void) updateLabels {
     
-    GameEngineController *currentGame = [[GameEngineController alloc] init];
+    Game = [[GameEngineController alloc] init];
     
-    self.lettersLabel.text = [currentGame newLettersString];
-    self.wordLabel.text = [currentGame newWordString];
-    self.livesLabel.text = [currentGame newLivesString];
+    // Updates labels
+    self.lettersLabel.text = [Game newLettersString];
+    self.wordLabel.text = [Game newWordString];
+    self.livesLabel.text = [Game newLivesString];
+    
+    // Empty input field
+    self.letterInput.text = @"";
 }
 
 @end

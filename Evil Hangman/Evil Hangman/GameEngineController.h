@@ -10,23 +10,20 @@
 
 @interface GameEngineController : NSObject
 
-- (void)loadWords; 
-
-- (BOOL)inputSizeCheck: (NSString *) input;
-- (BOOL)inputFormatCheck: (NSString *) input;
+- (BOOL) inputSizeCheck: (NSString *) input;
+- (BOOL) inputFormatCheck: (NSString *) input;
 - (BOOL) inputLettersArrayCheck: (NSString *) input;
 
-- (void)lettersUpdate: (NSString *) input;
-- (void)wordUpdate: (NSString *) input;
 
-- (NSArray *)newLettersArray;
-- (NSString *)newLettersString;
+- (void) lettersUpdate: (NSString *) input;
+- (void) wordUpdate: (NSString *) input;
 
-- (NSArray *)newWordArray;
-- (NSString *)newWordString;
+- (void) newGame;
 
-- (NSInteger *)newLivesInteger;
-- (NSString *)newLivesString;
-- (void)livesUpdate;
+- (NSString *) newLettersString;
+- (NSString *) newWordString;
+- (NSString *) newLivesString;
+
+- (BOOL) livesCheck;
 
 @end
