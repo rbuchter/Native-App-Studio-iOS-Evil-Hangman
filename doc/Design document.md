@@ -31,7 +31,9 @@ After every new guess switch to the most words. To maximize ability to cheat.
 
 #### GameEngineController
 - livesCheck
+- wordSwapCheck, check if letters in word are changed if this is not the case the lives will be updated. [void] [private] 
 
+- **keyWordDictionary**, function generate key for dictionary of word, based on input. Example '_AUpate_A_'. [string] [private]
 - **wordsListLoad**, loads words.plist into array and extract array with words of right size. [void] [private]
 
 - inputSizeCheck, checks if input is the right size of 1 character. [BOOL] [public]

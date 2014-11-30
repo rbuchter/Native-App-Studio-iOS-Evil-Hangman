@@ -13,49 +13,70 @@
     NSUserDefaults *defaults; 
 }
 
-// Checks if user has lose game
-- (BOOL) livesCheck {
+// GAME FUNCTIONS
+// Main game function, called on every new input
+- (void) mainGame: (NSString *) input {
+    
+    // Removes input from letters
+    [ self lettersUpdate: input ];
+    
+    // Generate dictionary
+    NSMutableDictionary *wordDictionary = [ self wordDictionary: input ];
+    
+    // Search for key of main item in dictionary
+    NSString *keyMainItemDictionary = [ self mainWordDictionary: wordDictionary ];
+    
+    // Update UserDefaults with biggest array
+    [ defaults setObject: [ wordDictionary objectForKey: keyMainItemDictionary ] forKey: @"currentWordArray" ];
+    
+    // Updates word
+    [ self wordUpdate: keyMainItemDictionary ];
+    
+}
+
+// Sets all UserDefaults to start new game based on settings
+- (void) newGame {
+    
+    [ self newLettersArray ];
+    [ self newWordArray ];
+    [ self newLivesInteger ];
+    
+    [ self wordsListLoad ];
+    
+}
+
+// Checks if user has win or lose game
+- (NSInteger) winCheck {
     
     defaults = [ NSUserDefaults standardUserDefaults ];
-
+    
+    NSMutableArray *currentWord  = [ defaults objectForKey: @"currentWordState" ];
+    NSString *character;
+    NSInteger *count = 0;
+    
+    for ( character in currentWord ) {
+        if ( [character isEqual: @"_" ] )
+            count += 1;
+    }
+    
     NSInteger lives = [ defaults integerForKey: @"currentLives" ];
     
-    if (lives > 1)
-        return TRUE;
+    // Won game
+    if (count == 0)
+        return 1;
+    
+    // Continue game
+    else if ( count > 0 && lives >= 1)
+        return 0;
+    
+    // Lose game
     else
-        return FALSE;
+        return -1;
     
 }
 
 
-
-
-
-// Loads words.plist into array and extract array with words of right size
-- (void) wordsListLoad {
-    
-    defaults = [ NSUserDefaults standardUserDefaults ];
-
-    // Creates wordsArray of all words in file words.plist
-    NSMutableArray *wordsArray = [[ NSMutableArray alloc ] initWithContentsOfFile: [[ NSBundle mainBundle ] pathForResource: @"words" ofType: @"plist" ]];
-    
-    NSString *word;
-    NSInteger wordLength = [ defaults integerForKey: @"numberOfLetters" ];
-    NSMutableArray *currentWordsArray = [[ NSMutableArray alloc ] init ];
-    
-    // Loops trough wordsArray and add words of right size to currentWordsArray
-    for (word in wordsArray)
-        if([ word length ] == wordLength)
-            [ currentWordsArray addObject: [ NSString stringWithFormat: @"%@", word ]];
-    
-    [ defaults setObject: currentWordsArray forKey: @"currentWordArray" ];
-    
-}
-
-
-
-
-
+// INPUT CHECK FUNCTIONS
 // Checks if input is the right size of 1 character
 - (BOOL) inputSizeCheck: ( NSString * ) input {
 
@@ -94,146 +115,113 @@
     
 }
 
-// Updates 'currentLettersState' in UserDefaults by removing guessed letter form array
-- (void) lettersUpdate: (NSString *) input {
+
+// DICTIONARY FUNCTIONS
+// Loads words.plist into array and extract array with words of right size
+- (void) wordsListLoad {
     
     defaults = [ NSUserDefaults standardUserDefaults ];
     
-    NSMutableArray *lettersArray = [[ defaults objectForKey: @"currentLettersState" ] mutableCopy ];
-
-    [ lettersArray removeObject: input ];
+    // Creates wordsArray of all words in file words.plist
+    NSMutableArray *wordsArray = [[ NSMutableArray alloc ] initWithContentsOfFile: [[ NSBundle mainBundle ] pathForResource: @"words" ofType: @"plist" ]];
     
-    [ defaults setObject: lettersArray forKey: @"currentLettersState" ];
+    NSString *word;
+    NSInteger wordLength = [ defaults integerForKey: @"numberOfLetters" ];
+    NSMutableArray *currentWordsArray = [[ NSMutableArray alloc ] init ];
+    
+    // Loops trough wordsArray and add words of right size to currentWordsArray
+    for (word in wordsArray)
+        if([ word length ] == wordLength)
+            [ currentWordsArray addObject: [ NSString stringWithFormat: @"%@", word ]];
+    
+    [ defaults setObject: currentWordsArray forKey: @"currentWordArray" ];
     
 }
 
-
-
-
-
-//
-- (void)wordUpdate: (NSString *) input {
+// Function generate key for dictionary of word, based on input
+- (NSString *) keyWordDictionary: (NSString *) input :(NSString *) word {
     
-    defaults = [NSUserDefaults standardUserDefaults];
+    NSString *key = @"" ;
     
-    NSMutableArray *currentWordArray = [defaults objectForKey: @"currentWordArray" ];
-    NSString *word;
-    NSMutableDictionary *wordDictionary = [NSMutableDictionary dictionary];
-    
-    for (word in currentWordArray)
+    // Loops through characters of word and creates key for word
+    for ( NSInteger charIndex = 0; charIndex < word.length; charIndex++ )
     {
-        NSString *key = @"";
-        NSMutableArray *wordArray;
+        NSString *character = [ NSString stringWithFormat: @"%C",[ word characterAtIndex: charIndex ]];
         
-        // Loops through characters word
-        for (NSInteger charIndex=0; charIndex<word.length; charIndex++)
-        {
-            
-            NSString *character = [NSString stringWithFormat:@"%C",[word characterAtIndex:charIndex]];
-            
-            if([character isEqualToString: input])
-                key = [key stringByAppendingFormat:@"%@", character];
-            else
-                key = [key stringByAppendingFormat:@"_"];
-
-        }
-        
-        // Add values to dictionary
-        if ([[wordDictionary valueForKey:key] count] == 0)
-            wordArray = [[NSMutableArray alloc]init];
+        if([ character isEqualToString: input ])
+            key = [ key stringByAppendingFormat: @"%@", character ];
         else
-            wordArray = [wordDictionary valueForKey:key];
-        
-        [wordArray addObject: word];
-        [wordDictionary setObject: wordArray forKey: key];
+            key = [ key stringByAppendingFormat: @"_" ];
         
     }
     
-    NSString *keyDictionary;
-    int sizeMaxWordArray = 0;
-    NSString *keyMaxWordArray;
+    return key;
+    
+}
+
+// Fucntion generate dictionary with keys based on input and values as word arrays
+- (NSMutableDictionary *)wordDictionary: (NSString *) input {
+    
+    defaults = [ NSUserDefaults standardUserDefaults ];
+    
+    NSMutableArray *currentWordArray = [ defaults objectForKey: @"currentWordArray" ];
+    NSString *word;
+    NSMutableDictionary *wordDictionary = [ NSMutableDictionary dictionary ];
+    
+    for (word in currentWordArray)
+    {
+        NSString * key = [self keyWordDictionary: input :word];
+        
+        NSMutableArray *wordArray;
+        
+        // Checks if there's already a array in dictionary
+        if ([[ wordDictionary valueForKey: key ] count ] == 0 )
+            wordArray = [[ NSMutableArray alloc ] init ];
+        else
+            wordArray = [ wordDictionary valueForKey: key ];
+        
+        // Add words to array in dictionary
+        [ wordArray addObject: word ];
+        [ wordDictionary setObject: wordArray forKey: key ];
+        
+    }
+    
+    return wordDictionary;
+    
+}
+
+// Function search for biggest opbject in dictionary
+- (NSString *) mainWordDictionary: (NSMutableDictionary *) dictionary {
+    
+    NSString *key;
+    NSString *word;
+    
+    int sizeMainItemDictionary = 0;
+    NSString *keyMainItemDictionary;
     
     // Loop through dictionary
-    for (keyDictionary in wordDictionary)
+    for (key in dictionary)
     {
         int sizeArray = 0;
         
         // Count number of words in array
-        for(word in [wordDictionary objectForKey: keyDictionary])
+        for(word in [dictionary objectForKey: key])
         {
             sizeArray += 1;
         }
         
         // Change value if size of wordArray is bigger than current one
-        if (sizeMaxWordArray < sizeArray) {
-            sizeMaxWordArray = sizeArray;
-            keyMaxWordArray = keyDictionary;
-        }
-    }
-    NSLog(@"%d", sizeMaxWordArray);
-    NSLog(@"%@", keyMaxWordArray);
-    
-    
-    // Update UserDefaults
-    [ defaults setObject: [ wordDictionary objectForKey: keyMaxWordArray ] forKey: @"currentWordArray" ];
-    
-    
-    
-    NSMutableArray *currentWord  = [[ defaults objectForKey: @"currentWordState" ] mutableCopy ];
-    NSInteger *sizeWordSwap = 0;
-    
-    for (NSInteger charIndex = 0; charIndex < keyMaxWordArray.length; charIndex++)
-    {
-        NSString *character = [ NSString stringWithFormat: @"%C",[ keyMaxWordArray characterAtIndex: charIndex ]];
-        
-        if( ![ character isEqualToString: @"_" ])
-        {
-            [ currentWord replaceObjectAtIndex: charIndex withObject: character ];
-            sizeWordSwap += 1;
+        if (sizeMainItemDictionary < sizeArray) {
+            sizeMainItemDictionary = sizeArray;
+            keyMainItemDictionary = key;
         }
     }
     
-    // Update lives based on number of character swaps.
-    [ self wordSwapCheck: sizeWordSwap ];
-
-    // Update word array
-    [ defaults setObject: currentWord forKey: @"currentWordState" ];
-
+    return keyMainItemDictionary;
 }
 
-// 
-- (void) wordSwapCheck: ( NSInteger * ) sizeWordSwap {
-    
-    if (sizeWordSwap == 0)
-        [ self livesUpdate ];
-    
-}
 
-// Updates 'currentLives' in UserDefaults with lives decreased by 1
-- (void) livesUpdate {
-    
-    defaults = [ NSUserDefaults standardUserDefaults ];
-    
-    NSInteger lives = [ defaults integerForKey: @"currentLives" ];
-    
-    if (lives > 0)
-        lives -= 1;
-
-    [ defaults setInteger: lives forKey: @"currentLives" ];
-
-}
-
-// Sets all UserDefaults to start new game based on settings
-- (void) newGame {
-    
-    [ self newLettersArray ];
-    [ self newWordArray ];
-    [ self newLivesInteger ];
-    
-    [ self wordsListLoad ];
-    
-}
-
+// LETTERS FUNCTIONS
 // Sets 'currentLettersState' to value of array with characters A-Z in UserDefauls
 - (void) newLettersArray {
     
@@ -262,10 +250,23 @@
     
 }
 
-/* 
-Sets 'currentWordState' to array with placeholders '_' for the letters to be guessed,
-based on 'numberOfLetters' in UserDefaults
- */
+// Updates 'currentLettersState' in UserDefaults by removing guessed letter form array
+- (void) lettersUpdate: (NSString *) input {
+    
+    defaults = [ NSUserDefaults standardUserDefaults ];
+    
+    NSMutableArray *lettersArray = [[ defaults objectForKey: @"currentLettersState" ] mutableCopy ];
+    
+    [ lettersArray removeObject: input ];
+    
+    [ defaults setObject: lettersArray forKey: @"currentLettersState" ];
+    
+}
+
+
+// WORD FUNCTIONS
+/* Sets 'currentWordState' to array with placeholders '_' for the letters to be guessed,
+based on 'numberOfLetters' in UserDefaults */
 - (void) newWordArray {
     
     defaults = [ NSUserDefaults standardUserDefaults ];
@@ -296,6 +297,32 @@ based on 'numberOfLetters' in UserDefaults
     
 }
 
+// Updates 'currentWordState' in UserDefaults based on the largest key in dictionary.
+- (void) wordUpdate: (NSString *) keyMainItemDictionary {
+    
+    defaults = [ NSUserDefaults standardUserDefaults ];
+    
+    NSMutableArray *currentWord  = [[ defaults objectForKey: @"currentWordState" ] mutableCopy ];
+    NSInteger *sizeWordSwap = 0;
+    
+    for (NSInteger charIndex = 0; charIndex < keyMainItemDictionary.length; charIndex++){
+        
+        NSString *character = [ NSString stringWithFormat: @"%C",[ keyMainItemDictionary characterAtIndex: charIndex ]];
+        
+        if( ![ character isEqualToString: @"_" ]) {
+            [ currentWord replaceObjectAtIndex: charIndex withObject: character ];
+            sizeWordSwap += 1;
+        }
+    }
+    
+    [ self livesUpdate: sizeWordSwap ];
+    
+    [ defaults setObject: currentWord forKey: @"currentWordState" ];
+    
+}
+
+
+// LIVES FUNCTIONS
 // Sets 'currentLives' to value of 'numberOfIncorrectGuesses' in UserDefauls
 - (void) newLivesInteger {
     
@@ -312,6 +339,22 @@ based on 'numberOfLetters' in UserDefaults
     
     return [ NSString stringWithFormat: @"%ld", (long) [ defaults integerForKey: @"currentLives" ]];
     
+}
+
+// Updates 'currentLives' in UserDefaults with lives decreased by 1
+- (void) livesUpdate: (NSInteger *) sizeWordSwap {
+    
+    if ( sizeWordSwap == 0 ) {
+        
+        defaults = [ NSUserDefaults standardUserDefaults ];
+    
+        NSInteger lives = [ defaults integerForKey: @"currentLives" ];
+    
+        if (lives > 0)
+            lives -= 1;
+    
+        [ defaults setInteger: lives forKey: @"currentLives" ];
+    }
 }
 
 @end

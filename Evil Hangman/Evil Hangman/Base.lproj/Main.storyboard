@@ -78,6 +78,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
                                     <mask key="constraints">
                                         <include reference="1SF-2w-9Z5"/>
                                     </mask>
@@ -86,9 +87,11 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ayh-KM-fZX">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="OPK-67-XaA"/>
+                                    <constraint firstAttribute="height" constant="21" id="OPK-67-XaA">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                                    </constraint>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
@@ -106,13 +109,14 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="36" id="XeO-7h-fVT">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="40"/>
                                     </constraint>
                                     <constraint firstAttribute="height" constant="36" id="cj3-JH-l9K">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="40"/>
                                     </constraint>
                                 </constraints>
-                                <state key="normal" image="add63" backgroundImage="add63">
+                                <inset key="contentEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
+                                <state key="normal" image="add63" backgroundImage="gray-button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -134,13 +138,18 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFv-m1-Cqd">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="5gg-IK-zBi"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="D9z-63-w0W"/>
+                                    <constraint firstAttribute="height" constant="30" id="5gg-IK-zBi">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="D9z-63-w0W">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                                    </constraint>
                                     <constraint firstAttribute="width" constant="60" id="Noz-dL-AtM">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="40"/>
                                     </constraint>
                                 </constraints>
-                                <state key="normal" image="settings20">
+                                <inset key="contentEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
+                                <state key="normal" image="settings20" backgroundImage="gray-button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -164,8 +173,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart64" translatesAutoresizingMaskIntoConstraints="NO" id="5eN-Tz-3be">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="jhP-Hn-gc7"/>
-                                    <constraint firstAttribute="width" constant="21" id="xOb-9Y-U3Y"/>
+                                    <constraint firstAttribute="height" constant="21" id="jhP-Hn-gc7">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="21" id="xOb-9Y-U3Y">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                                    </constraint>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -180,10 +193,15 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="#" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9xV-a5-DsN">
+                            <textField opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="#" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9xV-a5-DsN">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="go"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="cQr-B3-ZbN"/>
                                 </connections>
@@ -192,7 +210,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5eN-Tz-3be" firstAttribute="leading" secondItem="Ayh-KM-fZX" secondAttribute="leading" id="47y-ek-qks">
-                                <variation key="heightClass=regular-widthClass=compact" constant="-29"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="-48"/>
                             </constraint>
                             <constraint firstItem="Ayh-KM-fZX" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="4bK-kj-IYT"/>
                             <constraint firstItem="5eN-Tz-3be" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="7fy-xc-UgG"/>
@@ -209,9 +227,11 @@
                             <constraint firstItem="BFv-m1-Cqd" firstAttribute="centerY" secondItem="A3o-tO-HGq" secondAttribute="centerY" id="dFz-hK-bwl">
                                 <variation key="heightClass=regular-widthClass=compact" constant="7.5"/>
                             </constraint>
-                            <constraint firstItem="BFv-m1-Cqd" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="g12-Wu-YwS"/>
+                            <constraint firstItem="BFv-m1-Cqd" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="g12-Wu-YwS">
+                                <variation key="heightClass=regular-widthClass=compact" constant="-5"/>
+                            </constraint>
                             <constraint firstItem="Ayh-KM-fZX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="miB-Dq-zRa">
-                                <variation key="heightClass=regular-widthClass=compact" constant="29"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="48"/>
                             </constraint>
                             <constraint firstItem="A3o-tO-HGq" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="ogo-4N-uj8"/>
                             <constraint firstItem="9xV-a5-DsN" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="p0m-ic-w5B"/>
@@ -328,7 +348,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Yma-yi-lij"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
@@ -342,18 +362,12 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="1" maxValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="8N3-Do-As0">
-                                <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
-                                <connections>
-                                    <action selector="sliderNumberOfLettersChanged:" destination="eaP-80-ssa" eventType="valueChanged" id="sra-jV-wZI"/>
-                                </connections>
-                            </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of incorrect guesses: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZ1-Y2-46Q">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="XBc-Ua-nEx"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
@@ -399,10 +413,15 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mht-RU-xrf">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="6v8-DQ-bq2"/>
-                                    <constraint firstAttribute="width" constant="30" id="UGT-dC-a8M"/>
+                                    <constraint firstAttribute="height" constant="30" id="6v8-DQ-bq2">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="30" id="UGT-dC-a8M">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                                    </constraint>
                                 </constraints>
-                                <state key="normal" title="Back to game" image="joystick4">
+                                <inset key="contentEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
+                                <state key="normal" title="Back to game" image="joystick4" backgroundImage="gray-button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -421,6 +440,12 @@
                                     <segue destination="vXZ-lx-hvc" kind="show" id="EGB-57-qGc"/>
                                 </connections>
                             </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="1" maxValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="8N3-Do-As0">
+                                <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
+                                <connections>
+                                    <action selector="sliderNumberOfLettersChanged:" destination="eaP-80-ssa" eventType="valueChanged" id="sra-jV-wZI"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -447,11 +472,11 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="TLN-sU-XUo"/>
-                                <exclude reference="8N3-Do-As0"/>
                                 <exclude reference="BZ1-Y2-46Q"/>
                                 <exclude reference="stt-ao-feY"/>
                                 <exclude reference="SCJ-He-img"/>
                                 <exclude reference="mht-RU-xrf"/>
+                                <exclude reference="8N3-Do-As0"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="CGD-yG-flr"/>
@@ -476,11 +501,11 @@
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="TLN-sU-XUo"/>
-                                <include reference="8N3-Do-As0"/>
                                 <include reference="BZ1-Y2-46Q"/>
                                 <include reference="stt-ao-feY"/>
                                 <include reference="SCJ-He-img"/>
                                 <include reference="mht-RU-xrf"/>
+                                <include reference="8N3-Do-As0"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="CGD-yG-flr"/>
@@ -517,6 +542,7 @@
     </scenes>
     <resources>
         <image name="add63" width="128" height="128"/>
+        <image name="gray-button" width="300" height="43"/>
         <image name="heart64" width="128" height="128"/>
         <image name="joystick4" width="128" height="128"/>
         <image name="settings20" width="128" height="128"/>

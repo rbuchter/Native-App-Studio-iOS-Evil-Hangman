@@ -10,7 +10,6 @@
 
 @interface GameViewController : UIViewController
 
-
 @property (strong, nonatomic) IBOutlet UILabel *lettersLabel;
 @property (strong, nonatomic) IBOutlet UILabel *wordLabel;
 @property (strong, nonatomic) IBOutlet UILabel *livesLabel;
