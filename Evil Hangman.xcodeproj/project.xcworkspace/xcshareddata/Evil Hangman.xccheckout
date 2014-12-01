@@ -5,16 +5,20 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>0D1F09BC-007C-4A8F-AE27-4BE36BEDCE8E</string>
+	<string>66440FB3-01DE-4389-B9A7-7ACD41CD9DB4</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Evil Hangman</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>8F72D8DE71CF6F2783C31EAD30B53A63158844A9</key>
 		<string>https://github.com/rbuchter/Native-App-Studio-iOS-Evil-Hangman.git</string>
 	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Evil Hangman.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>8F72D8DE71CF6F2783C31EAD30B53A63158844A9</key>
-		<string>Native-App-Studio-iOS-Evil-Hangman/</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/rbuchter/Native-App-Studio-iOS-Evil-Hangman.git</string>

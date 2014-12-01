@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BF7CC77B1A1B7D4700EA3A6B"
+               BlueprintIdentifier = "BF740F9B1A2350B000B5F7C5"
                BuildableName = "Evil Hangman.app"
                BlueprintName = "Evil Hangman"
                ReferencedContainer = "container:Evil Hangman.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BF7CC7941A1B7D4700EA3A6B"
+               BlueprintIdentifier = "BF740FB41A2350B000B5F7C5"
                BuildableName = "Evil HangmanTests.xctest"
                BlueprintName = "Evil HangmanTests"
                ReferencedContainer = "container:Evil Hangman.xcodeproj">
@@ -46,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BF7CC7941A1B7D4700EA3A6B"
+               BlueprintIdentifier = "BF740FB41A2350B000B5F7C5"
                BuildableName = "Evil HangmanTests.xctest"
                BlueprintName = "Evil HangmanTests"
                ReferencedContainer = "container:Evil Hangman.xcodeproj">
@@ -56,7 +56,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BF7CC77B1A1B7D4700EA3A6B"
+            BlueprintIdentifier = "BF740F9B1A2350B000B5F7C5"
             BuildableName = "Evil Hangman.app"
             BlueprintName = "Evil Hangman"
             ReferencedContainer = "container:Evil Hangman.xcodeproj">
@@ -75,7 +75,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BF7CC77B1A1B7D4700EA3A6B"
+            BlueprintIdentifier = "BF740F9B1A2350B000B5F7C5"
             BuildableName = "Evil Hangman.app"
             BlueprintName = "Evil Hangman"
             ReferencedContainer = "container:Evil Hangman.xcodeproj">
@@ -93,7 +93,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BF7CC77B1A1B7D4700EA3A6B"
+            BlueprintIdentifier = "BF740F9B1A2350B000B5F7C5"
             BuildableName = "Evil Hangman.app"
             BlueprintName = "Evil Hangman"
             ReferencedContainer = "container:Evil Hangman.xcodeproj">
