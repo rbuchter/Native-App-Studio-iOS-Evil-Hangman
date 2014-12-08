@@ -10,9 +10,12 @@
 
 @interface GameViewController : UIViewController
 
+// Outlets to labels
 @property (strong, nonatomic) IBOutlet UILabel *lettersLabel;
 @property (strong, nonatomic) IBOutlet UILabel *wordLabel;
 @property (strong, nonatomic) IBOutlet UILabel *livesLabel;
+
+// Outlets to input field
 @property (strong, nonatomic) IBOutlet UITextField *letterInput;
 
 @end

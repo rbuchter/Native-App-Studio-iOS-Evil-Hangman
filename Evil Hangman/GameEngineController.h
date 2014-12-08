@@ -10,14 +10,17 @@
 
 @interface GameEngineController : NSObject
 
+// Game functions
 - (void) mainGame: (NSString *) input;
 - (void) newGame;
 - (NSInteger) winCheck;
 
+// Check input functions
 - (BOOL) inputSizeCheck: (NSString *) input;
 - (BOOL) inputFormatCheck: (NSString *) input;
 - (BOOL) inputLettersArrayCheck: (NSString *) input;
 
+// Letters, word and lives functions
 - (NSString *) newLettersString;
 - (NSString *) newWordString;
 - (NSString *) newLivesString;

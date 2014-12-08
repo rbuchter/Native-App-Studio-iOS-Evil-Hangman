@@ -2,6 +2,8 @@
 //  SettingsViewController.m
 //  Evil Hangman
 //
+//  Gives the user the posibility to change the settings of the game
+//
 //  Created by Rick Buchter on 24-11-14.
 //  Copyright (c) 2014 Rick Buchter. All rights reserved.
 //
@@ -36,11 +38,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+// Action called when slider with number of letters changed
 - (IBAction) sliderNumberOfLettersChanged: (UISlider *) sender {
     
     int value = (int) lroundf ( sender.value );
     
-    defaults = [ NSUserDefaults standardUserDefaults ];
     [ defaults setInteger: value forKey:@"numberOfLetters" ];
     [ defaults synchronize ];
     
@@ -48,11 +50,11 @@
 
 }
 
+// Action called when slider with number of guesses changed
 - (IBAction) sliderNumberOfIncorrectGuessesChanged: (UISlider *) sender {
     
     int value = (int) lroundf ( sender.value );
     
-    defaults = [ NSUserDefaults standardUserDefaults ];
     [ defaults setInteger: value forKey: @"numberOfIncorrectGuesses" ];
     [ defaults synchronize ];
     

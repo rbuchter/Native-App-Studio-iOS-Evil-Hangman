@@ -2,6 +2,8 @@
 //  GameViewController.m
 //  Evil Hangman
 //
+//  Displays the current state of the game and process the input to GameEngineController
+//
 //  Created by Rick Buchter on 24-11-14.
 //  Copyright (c) 2014 Rick Buchter. All rights reserved.
 //
@@ -12,8 +14,7 @@
 @interface GameViewController () {
     
     NSUserDefaults *defaults;
-    GameEngineController *game;
-    
+    GameEngineController *game;;
 }
 
 @end
@@ -23,24 +24,31 @@
 
 - (void) viewDidLoad {
     [ super viewDidLoad ];
-    
+    NSLog(@"ViewDidLoad");
     defaults = [ NSUserDefaults standardUserDefaults ];
     game = [[ GameEngineController alloc ] init ];
     
     // Checks if any UserDefaults are set
     if ([ defaults integerForKey: @"numberOfLetters" ] == 0 ){
+        NSLog(@"GameViewController:viewDidLoad:insideIf");
+        
+        
         [ defaults setInteger:5 forKey: @"numberOfLetters" ];
         [ defaults setInteger:7 forKey: @"numberOfIncorrectGuesses" ];
         
         // Call to main game function
         [ game newGame ];
         
-        [ defaults synchronize ];
+        //[ defaults synchronize ];
     }
     
     // Updates all labels
     [self updateLabels];
  
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    [self updateLabels];
 }
 
 - (void) didReceiveMemoryWarning {
@@ -50,8 +58,6 @@
 
 // Start new game with variable form UserDefaults
 - (IBAction) newGame: (UIButton *) sender {
-    
-    game = [[ GameEngineController alloc ] init ];
     
     // Call to main game function
     [ game newGame ];
@@ -70,8 +76,6 @@
 - (BOOL) textFieldShouldReturn: (UITextField *) textField {
     
     [ textField resignFirstResponder ];
-    
-    game = [[ GameEngineController alloc ] init ];
     
     // Sets input to uppercase
     NSString *input = [self.letterInput.text uppercaseString];
@@ -99,9 +103,8 @@
     return NO;
 }
 
+// Function handles all input alerts
 - (void) inputAlerts: (NSString *) input {
-    
-    game = [[GameEngineController alloc] init];
     
     // Shows alert if input is not the right size of characters
     if ( ![ game inputSizeCheck: input ] ) {
@@ -190,12 +193,13 @@
 // Function updates all labels
 - (void) updateLabels {
     
-    game = [[ GameEngineController alloc ] init ];
-    
     // Updates labels
     self.lettersLabel.text = [ game newLettersString ];
+    NSLog(@"updateLabels:newLettersString:%@",[ game newLettersString ]);
     self.wordLabel.text = [ game newWordString ];
+    NSLog(@"updateLabels:wordLabel:%@",[ game newWordString ]);
     self.livesLabel.text = [ game newLivesString ];
+    NSLog(@"updateLabels:livesLabel:%@",[ game newLivesString ]);
     
     // Empty input field
     self.letterInput.text = @"";
