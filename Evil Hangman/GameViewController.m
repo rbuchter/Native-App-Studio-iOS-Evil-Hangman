@@ -26,8 +26,6 @@
 - (void) viewDidLoad {
     [ super viewDidLoad ];
     
-    NSLog(@"VIEWDIDLOAD");
-    
     defaults = [ NSUserDefaults standardUserDefaults ];
     game = [[ GameEngineController alloc ] init ];
     
@@ -55,8 +53,6 @@
 // Start new game with variable form UserDefaults
 - (IBAction) newGame: (UIButton *) sender {
     
-    game = [[ GameEngineController alloc ] init ];
-    
     // Call to main game function
     [ game newGame ];
     
@@ -67,15 +63,15 @@
 
 // Removes keyboard if touched outside keyboard
 - (void) touchesBegan: (NSSet *) touches withEvent: (UIEvent *) event {
+    
     [self.letterInput resignFirstResponder];
+    
 }
 
 // Remove keyboard and process input
 - (BOOL) textFieldShouldReturn: (UITextField *) textField {
     
     [ textField resignFirstResponder ];
-    
-    game = [[ GameEngineController alloc ] init ];
     
     // Sets input to uppercase
     NSString *input = [self.letterInput.text uppercaseString];
@@ -102,12 +98,11 @@
     [ self winAlerts ];
     
     return NO;
+    
 }
 
 // Function handles all input alerts
 - (void) inputAlerts: (NSString *) input {
-    
-    game = [[GameEngineController alloc] init];
     
     // Shows alert if input is not the right size of characters
     if ( ![ game inputSizeCheck: input ] ) {
@@ -143,6 +138,7 @@
                               otherButtonTitles: nil ];
         [ alert show ];
         self.letterInput.text = @"";
+        
     }
 }
 
@@ -176,6 +172,7 @@
                               otherButtonTitles: @"Start new game!", nil];
         [ alert show ];
         [ self updateLabels ];
+        
     }
 }
 
@@ -185,13 +182,12 @@
         
         [ game newGame ];
         [ self updateLabels ];
+        
     }
 }
 
 // Function updates all labels
 - (void) updateLabels {
-    
-    game = [[ GameEngineController alloc ] init ];
     
     // Updates labels
     self.lettersLabel.text = [ game newLettersString ];
@@ -200,6 +196,7 @@
     
     // Empty input field
     self.letterInput.text = @"";
+    
 }
 
 @end

@@ -21,8 +21,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-        NSLog(@"VIEWDIDLOAD: SETTINGS");
-    
     defaults = [ NSUserDefaults standardUserDefaults ];
     
     // Set value of numberOfLettersLabel and corrosponding slider

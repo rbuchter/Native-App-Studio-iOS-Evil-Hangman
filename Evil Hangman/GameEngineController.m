@@ -50,8 +50,6 @@
 // Checks if user has win game
 - (BOOL) winCheck {
     
-    defaults = [ NSUserDefaults standardUserDefaults ];
-    
     NSMutableArray *currentWord  = [ defaults objectForKey: @"currentWordState" ];
     NSString *character;
     NSInteger *count = 0;
@@ -73,8 +71,6 @@
 
 // Check if user has lose the game
 - (BOOL) loseCheck {
-    
-    defaults = [ NSUserDefaults standardUserDefaults ];
     
     NSInteger lives = [ defaults integerForKey: @"currentLives" ];
     
@@ -114,8 +110,6 @@
 // Checks if input is in array 'currentLettersState' in UserDefaults
 - (BOOL) inputLettersArrayCheck: ( NSString * ) input {
     
-    defaults = [ NSUserDefaults standardUserDefaults ];
-    
     NSMutableArray *lettersArray = [ defaults objectForKey: @"currentLettersState" ];
     
     if ([ lettersArray containsObject: input ])
@@ -129,8 +123,6 @@
 // DICTIONARY FUNCTIONS
 // Loads words.plist into array and extract array with words of right size
 - (void) wordsListLoad {
-    
-    defaults = [ NSUserDefaults standardUserDefaults ];
     
     // Creates wordsArray of all words in file words.plist
     NSMutableArray *wordsArray = [[ NSMutableArray alloc ] initWithContentsOfFile: [[ NSBundle mainBundle ] pathForResource: @"words" ofType: @"plist" ]];
@@ -171,8 +163,6 @@
 
 // Fucntion generate dictionary with keys based on input and values as word arrays
 - (NSMutableDictionary *)wordDictionary: (NSString *) input {
-    
-    defaults = [ NSUserDefaults standardUserDefaults ];
     
     NSMutableArray *currentWordArray = [ defaults objectForKey: @"currentWordArray" ];
     NSString *word;
@@ -235,8 +225,6 @@
 // Sets 'currentLettersState' to value of array with characters A-Z in UserDefauls
 - (void) newLettersArray {
     
-    defaults = [ NSUserDefaults standardUserDefaults ];
-    
     NSMutableArray *lettersArray = [ NSMutableArray arrayWithObjects: @"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J", @"K", @"L", @"M", @"N", @"O", @"P", @"Q", @"R", @"S", @"T", @"U", @"V", @"W", @"X", @"Y", @"Z", nil ];
     
     // Set value of letters array in UserDefaults
@@ -263,8 +251,6 @@
 // Updates 'currentLettersState' in UserDefaults by removing guessed letter form array
 - (void) lettersUpdate: (NSString *) input {
     
-    defaults = [ NSUserDefaults standardUserDefaults ];
-    
     NSMutableArray *lettersArray = [[ defaults objectForKey: @"currentLettersState" ] mutableCopy ];
     
     [ lettersArray removeObject: input ];
@@ -278,8 +264,6 @@
 /* Sets 'currentWordState' to array with placeholders '_' for the letters to be guessed,
 based on 'numberOfLetters' in UserDefaults */
 - (void) newWordArray {
-    
-    defaults = [ NSUserDefaults standardUserDefaults ];
     
     NSMutableArray *wordArray = [[ NSMutableArray alloc ] init ];
     int numLetters = [ defaults integerForKey: @"numberOfLetters" ];
@@ -310,8 +294,6 @@ based on 'numberOfLetters' in UserDefaults */
 // Updates 'currentWordState' in UserDefaults based on the largest key in dictionary.
 - (void) wordUpdate: (NSString *) keyMainItemDictionary {
     
-    defaults = [ NSUserDefaults standardUserDefaults ];
-    
     NSMutableArray *currentWord  = [[ defaults objectForKey: @"currentWordState" ] mutableCopy ];
     NSInteger *sizeWordSwap = 0;
     
@@ -335,8 +317,6 @@ based on 'numberOfLetters' in UserDefaults */
 // LIVES FUNCTIONS
 // Sets 'currentLives' to value of 'numberOfIncorrectGuesses' in UserDefauls
 - (void) newLivesInteger {
-    
-    defaults = [ NSUserDefaults standardUserDefaults ];
 
     [ defaults setInteger: [ defaults integerForKey: @"numberOfIncorrectGuesses" ] forKey: @"currentLives" ];
     
@@ -355,8 +335,6 @@ based on 'numberOfLetters' in UserDefaults */
 - (void) livesUpdate: (NSInteger *) sizeWordSwap {
     
     if ( sizeWordSwap == 0 ) {
-        
-        defaults = [ NSUserDefaults standardUserDefaults ];
     
         NSInteger lives = [ defaults integerForKey: @"currentLives" ];
     
