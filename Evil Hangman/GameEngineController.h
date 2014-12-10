@@ -13,6 +13,7 @@
 // Public game functions
 - (void) mainGame: (NSString *) input;
 - (void) newGame;
+- (void) initUserDefaults; 
 - (BOOL) winCheck;
 - (BOOL) loseCheck; 
 

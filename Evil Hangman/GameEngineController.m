@@ -12,7 +12,7 @@
 
 @implementation GameEngineController {
     
-    NSUserDefaults *defaults; 
+    NSUserDefaults *defaults;
 }
 
 // GAME FUNCTIONS
@@ -39,12 +39,18 @@
 // Sets all UserDefaults to start new game based on settings
 - (void) newGame {
     
+    [ self initUserDefaults ];
+    
     [ self newLettersArray ];
     [ self newWordArray ];
     [ self newLivesInteger ];
     
     [ self wordsListLoad ];
     
+}
+
+- (void) initUserDefaults {
+    defaults = [ NSUserDefaults standardUserDefaults ];
 }
 
 // Checks if user has win game
@@ -218,6 +224,7 @@
     }
     
     return keyMainItemDictionary;
+    
 }
 
 
@@ -229,13 +236,15 @@
     
     // Set value of letters array in UserDefaults
     [ defaults setObject: lettersArray forKey: @"currentLettersState" ];
+    NSLog(@"Game:NewLettersArray:ObjectForKey:CurrentLettersState:%@", [ defaults objectForKey: @"currentLettersState" ]);
 
 }
 
 // Creates string of array of 'currentLettersState' in UserDefaults
 - (NSString *) newLettersString {
     
-    defaults = [ NSUserDefaults standardUserDefaults ];
+    //defaults = [ NSUserDefaults standardUserDefaults ];
+    NSLog(@"Game:NewLettersString:ObjectForKey:CurrentLettersState:%@", [ defaults objectForKey: @"currentLettersState" ]);
     
     NSArray *lettersArray = [ defaults objectForKey: @"currentLettersState" ];
     NSString *letter;
@@ -277,8 +286,6 @@ based on 'numberOfLetters' in UserDefaults */
 
 // Creates string of word array in 'currentWordState' in UserDefaults
 - (NSString *) newWordString {
-    
-    defaults = [ NSUserDefaults standardUserDefaults ];
     
     NSArray *wordArray = [ defaults objectForKey: @"currentWordState" ];
     NSString *letter;
@@ -324,8 +331,6 @@ based on 'numberOfLetters' in UserDefaults */
 
 // Creates string of 'currentLives' in UserDefaults
 - (NSString *) newLivesString {
-    
-    defaults = [ NSUserDefaults standardUserDefaults ];
     
     return [ NSString stringWithFormat: @"%ld", (long) [ defaults integerForKey: @"currentLives" ]];
     

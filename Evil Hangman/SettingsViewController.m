@@ -21,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSLog(@"viewDidLoad:Settings");
+    
     defaults = [ NSUserDefaults standardUserDefaults ];
     
     // Set value of numberOfLettersLabel and corrosponding slider
@@ -32,6 +34,8 @@
     self.sliderNumberOfIncorrectGuesses.value = (float)[ defaults integerForKey: @"numberOfIncorrectGuesses" ];
     
 }
+
+//- (void)viewWillAppear 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
