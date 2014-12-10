@@ -2,6 +2,8 @@
 //  GameViewController.m
 //  Evil Hangman
 //
+//  Displays the current state of the game and process the input to GameEngineController
+//
 //  Created by Rick Buchter on 24-11-14.
 //  Copyright (c) 2014 Rick Buchter. All rights reserved.
 //
@@ -23,6 +25,8 @@
 
 - (void) viewDidLoad {
     [ super viewDidLoad ];
+    
+    NSLog(@"VIEWDIDLOAD");
     
     defaults = [ NSUserDefaults standardUserDefaults ];
     game = [[ GameEngineController alloc ] init ];
@@ -94,11 +98,13 @@
     }
     
     // Alerts win
+    [ self loseAlerts ];
     [ self winAlerts ];
     
     return NO;
 }
 
+// Function handles all input alerts
 - (void) inputAlerts: (NSString *) input {
     
     game = [[GameEngineController alloc] init];
@@ -141,40 +147,35 @@
 }
 
 
-// Function handles all win and lose alerts
+// Function handles win alert
 - (void) winAlerts {
     
-    switch ( [ game winCheck ] ) {
-            
-        // Won game
-        case 1: {
-            NSString *message = [NSString stringWithFormat: @"With %@ lives left! Not bad.", [ game newLivesString ]];
-            UIAlertView *alert = [[UIAlertView alloc]
-                                  initWithTitle: @"You won!"
-                                  message: message
-                                  delegate:self
-                                  cancelButtonTitle: @"Cancel"
-                                  otherButtonTitles: @"Start new game!", nil ];
-            [ alert show ];
-            [ self updateLabels ];
-            break;
-        }
-            
-        // Lose game
-        case -1: {
-            UIAlertView *alert = [[ UIAlertView alloc ]
-                                  initWithTitle: @"You lose!"
-                                  message: @"Some people make it.."
-                                  delegate:self
-                                  cancelButtonTitle: @"Cancel"
-                                  otherButtonTitles: @"Start new game!", nil];
-            [ alert show ];
-            [ self updateLabels ];
-            break;
-        }
-            
-        default:
-            break;
+    if ( [ game winCheck ] ) {
+        NSString *message = [NSString stringWithFormat: @"With %@ lives left! Not bad.", [ game newLivesString ]];
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle: @"You won!"
+                              message: message
+                              delegate:self
+                              cancelButtonTitle: @"Cancel"
+                              otherButtonTitles: @"Start new game!", nil ];
+        [ alert show ];
+        [ self updateLabels ];
+
+    }
+}
+
+// Function handles lose alert
+- (void) loseAlerts {
+    
+    if ( [ game loseCheck ]) {
+        UIAlertView *alert = [[ UIAlertView alloc ]
+                              initWithTitle: @"You lose!"
+                              message: @"Some people make it.."
+                              delegate:self
+                              cancelButtonTitle: @"Cancel"
+                              otherButtonTitles: @"Start new game!", nil];
+        [ alert show ];
+        [ self updateLabels ];
     }
 }
 

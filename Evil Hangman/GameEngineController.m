@@ -2,6 +2,8 @@
 //  GameEngineController.m
 //  Evil Hangman
 //
+//  Process all the input from the GameViewController and organize the gameplay
+//
 //  Created by Rick Buchter on 26-11-14.
 //  Copyright (c) 2014 Rick Buchter. All rights reserved.
 //
@@ -45,8 +47,8 @@
     
 }
 
-// Checks if user has win or lose game
-- (NSInteger) winCheck {
+// Checks if user has win game
+- (BOOL) winCheck {
     
     defaults = [ NSUserDefaults standardUserDefaults ];
     
@@ -62,16 +64,24 @@
     NSInteger lives = [ defaults integerForKey: @"currentLives" ];
     
     // Won game
-    if (count == 0)
-        return 1;
-    
-    // Continue game
-    else if ( count > 0 && lives >= 1)
-        return 0;
-    
-    // Lose game
+    if (count == 0 && lives >= 1)
+        return TRUE;
     else
-        return -1;
+        return FALSE;
+    
+}
+
+// Check if user has lose the game
+- (BOOL) loseCheck {
+    
+    defaults = [ NSUserDefaults standardUserDefaults ];
+    
+    NSInteger lives = [ defaults integerForKey: @"currentLives" ];
+    
+    if ( lives >= 1 )
+        return FALSE;
+    else
+        return TRUE;
     
 }
 
