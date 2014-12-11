@@ -26,18 +26,15 @@
 - (void) viewDidLoad {
     [ super viewDidLoad ];
     
-    NSLog(@"viewDidLoad:Game");
-
+    NSLog(@"GameView:viewDidLoad");
     
     defaults = [ NSUserDefaults standardUserDefaults ];
     game = [[ GameEngineController alloc ] init ];
-    NSLog(@"IntegerValueFor NumberOfLetters%ld", (long)[ defaults integerForKey: @"numberOfLetters" ]);
     
     // Checks if any UserDefaults are set
     if ([ defaults integerForKey: @"numberOfLetters" ] == 0 ){
         [ defaults setInteger:5 forKey: @"numberOfLetters" ];
         [ defaults setInteger:7 forKey: @"numberOfIncorrectGuesses" ];
-        NSLog(@"IntegerValueFor NumberOfLetters2%ld", (long)[ defaults integerForKey: @"numberOfLetters" ]);
         
         // Call to main game function
         [ game newGame ];
@@ -116,7 +113,7 @@
                               initWithTitle: @"Too large input"
                               message: @"It's not allowed to input more than one letter a time"
                               delegate: self
-                              cancelButtonTitle: @"Continu game!"
+                              cancelButtonTitle: @"Continue game!"
                               otherButtonTitles: nil ];
         [alert show];
         [ self updateLabels ];
@@ -196,9 +193,7 @@
 - (void) updateLabels {
     
     // Updates labels
-    NSLog(@"IntegerValueFor NumberOfLetters:in UpdateLabels:%ld", (long)[ defaults integerForKey: @"numberOfLetters" ]);
     self.lettersLabel.text = [ game newLettersString ];
-    NSLog(@"IntegerValueFor NumberOfLetters:in UpdateLabels:%@", [ game newLettersString ]);
     self.wordLabel.text = [ game newWordString ];
     self.livesLabel.text = [ game newLivesString ];
     

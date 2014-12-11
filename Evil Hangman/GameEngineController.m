@@ -49,6 +49,7 @@
     
 }
 
+// Initalise UserDefaults object
 - (void) initUserDefaults {
     defaults = [ NSUserDefaults standardUserDefaults ];
 }
@@ -60,6 +61,7 @@
     NSString *character;
     NSInteger *count = 0;
     
+    // Count number of '_' left
     for ( character in currentWord ) {
         if ( [character isEqual: @"_" ] )
             count += 1;
@@ -236,15 +238,11 @@
     
     // Set value of letters array in UserDefaults
     [ defaults setObject: lettersArray forKey: @"currentLettersState" ];
-    NSLog(@"Game:NewLettersArray:ObjectForKey:CurrentLettersState:%@", [ defaults objectForKey: @"currentLettersState" ]);
 
 }
 
 // Creates string of array of 'currentLettersState' in UserDefaults
 - (NSString *) newLettersString {
-    
-    //defaults = [ NSUserDefaults standardUserDefaults ];
-    NSLog(@"Game:NewLettersString:ObjectForKey:CurrentLettersState:%@", [ defaults objectForKey: @"currentLettersState" ]);
     
     NSArray *lettersArray = [ defaults objectForKey: @"currentLettersState" ];
     NSString *letter;

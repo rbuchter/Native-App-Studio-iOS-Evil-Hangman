@@ -601,31 +601,8 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cwT-yx-r8t" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hangman" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ZK-CI-0Lc">
-                    <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
-                    <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="71" id="9Hs-9S-gys"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="9Hs-9S-gys"/>
-                        </mask>
-                    </variation>
-                    <variation key="heightClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="16" y="20" width="42" height="21"/>
-                    </variation>
-                    <variation key="heightClass=regular-widthClass=compact">
-                        <mask key="constraints">
-                            <include reference="9Hs-9S-gys"/>
-                        </mask>
-                    </variation>
-                </label>
             </objects>
-            <point key="canvasLocation" x="1066.5" y="477.75"/>
+            <point key="canvasLocation" x="1023" y="477.75"/>
         </scene>
     </scenes>
     <resources>

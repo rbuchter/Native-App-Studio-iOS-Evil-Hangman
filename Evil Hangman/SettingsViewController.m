@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"viewDidLoad:Settings");
+    NSLog(@"SettingsView:viewDidLoad");
     
     defaults = [ NSUserDefaults standardUserDefaults ];
     
@@ -34,8 +34,6 @@
     self.sliderNumberOfIncorrectGuesses.value = (float)[ defaults integerForKey: @"numberOfIncorrectGuesses" ];
     
 }
-
-//- (void)viewWillAppear 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
