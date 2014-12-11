@@ -2,6 +2,8 @@
 //  SettingsViewController.m
 //  Evil Hangman
 //
+//  Viw witch gives the user the posibility to change the settings of the game
+//
 //  Created by Rick Buchter on 24-11-14.
 //  Copyright (c) 2014 Rick Buchter. All rights reserved.
 //
@@ -18,6 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSLog(@"SettingsView:viewDidLoad");
     
     defaults = [ NSUserDefaults standardUserDefaults ];
     
@@ -36,6 +40,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+// Action called when slider with number of letters changed
 - (IBAction) sliderNumberOfLettersChanged: (UISlider *) sender {
     
     int value = (int) lroundf ( sender.value );
@@ -48,6 +53,7 @@
 
 }
 
+// Action called when slider with number of guesses changed
 - (IBAction) sliderNumberOfIncorrectGuessesChanged: (UISlider *) sender {
     
     int value = (int) lroundf ( sender.value );
