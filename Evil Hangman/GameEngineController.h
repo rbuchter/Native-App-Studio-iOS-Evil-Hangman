@@ -10,19 +10,14 @@
 
 @interface GameEngineController : NSObject
 
-// Public game functions
 - (void) mainGame: (NSString *) input;
 - (void) newGame;
-- (void) initUserDefaults; 
-- (BOOL) winCheck;
-- (BOOL) loseCheck; 
+- (NSInteger) winCheck;
 
-// Public input check functions
 - (BOOL) inputSizeCheck: (NSString *) input;
 - (BOOL) inputFormatCheck: (NSString *) input;
 - (BOOL) inputLettersArrayCheck: (NSString *) input;
 
-// Public letters, word and lives functions
 - (NSString *) newLettersString;
 - (NSString *) newWordString;
 - (NSString *) newLivesString;

@@ -2,8 +2,6 @@
 //  GameViewController.m
 //  Evil Hangman
 //
-//  Displays the current state of the game and process the input to GameEngineController
-//
 //  Created by Rick Buchter on 24-11-14.
 //  Copyright (c) 2014 Rick Buchter. All rights reserved.
 //
@@ -26,8 +24,6 @@
 - (void) viewDidLoad {
     [ super viewDidLoad ];
     
-    NSLog(@"GameView:viewDidLoad");
-    
     defaults = [ NSUserDefaults standardUserDefaults ];
     game = [[ GameEngineController alloc ] init ];
     
@@ -43,7 +39,6 @@
     }
     
     // Updates all labels
-    [ game initUserDefaults ];
     [self updateLabels];
  
 }
@@ -56,6 +51,8 @@
 // Start new game with variable form UserDefaults
 - (IBAction) newGame: (UIButton *) sender {
     
+    game = [[ GameEngineController alloc ] init ];
+    
     // Call to main game function
     [ game newGame ];
     
@@ -66,15 +63,15 @@
 
 // Removes keyboard if touched outside keyboard
 - (void) touchesBegan: (NSSet *) touches withEvent: (UIEvent *) event {
-    
     [self.letterInput resignFirstResponder];
-    
 }
 
 // Remove keyboard and process input
 - (BOOL) textFieldShouldReturn: (UITextField *) textField {
     
     [ textField resignFirstResponder ];
+    
+    game = [[ GameEngineController alloc ] init ];
     
     // Sets input to uppercase
     NSString *input = [self.letterInput.text uppercaseString];
@@ -97,15 +94,14 @@
     }
     
     // Alerts win
-    [ self loseAlerts ];
     [ self winAlerts ];
     
     return NO;
-    
 }
 
-// Function handles all input alerts
 - (void) inputAlerts: (NSString *) input {
+    
+    game = [[GameEngineController alloc] init];
     
     // Shows alert if input is not the right size of characters
     if ( ![ game inputSizeCheck: input ] ) {
@@ -113,7 +109,7 @@
                               initWithTitle: @"Too large input"
                               message: @"It's not allowed to input more than one letter a time"
                               delegate: self
-                              cancelButtonTitle: @"Continue game!"
+                              cancelButtonTitle: @"Continu game!"
                               otherButtonTitles: nil ];
         [alert show];
         [ self updateLabels ];
@@ -141,41 +137,44 @@
                               otherButtonTitles: nil ];
         [ alert show ];
         self.letterInput.text = @"";
-        
     }
 }
 
 
-// Function handles win alert
+// Function handles all win and lose alerts
 - (void) winAlerts {
     
-    if ( [ game winCheck ] ) {
-        NSString *message = [NSString stringWithFormat: @"With %@ lives left! Not bad.", [ game newLivesString ]];
-        UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle: @"You won!"
-                              message: message
-                              delegate:self
-                              cancelButtonTitle: @"Cancel"
-                              otherButtonTitles: @"Start new game!", nil ];
-        [ alert show ];
-        [ self updateLabels ];
-
-    }
-}
-
-// Function handles lose alert
-- (void) loseAlerts {
-    
-    if ( [ game loseCheck ]) {
-        UIAlertView *alert = [[ UIAlertView alloc ]
-                              initWithTitle: @"You lose!"
-                              message: @"Some people make it.."
-                              delegate:self
-                              cancelButtonTitle: @"Cancel"
-                              otherButtonTitles: @"Start new game!", nil];
-        [ alert show ];
-        [ self updateLabels ];
-        
+    switch ( [ game winCheck ] ) {
+            
+        // Won game
+        case 1: {
+            NSString *message = [NSString stringWithFormat: @"With %@ lives left! Not bad.", [ game newLivesString ]];
+            UIAlertView *alert = [[UIAlertView alloc]
+                                  initWithTitle: @"You won!"
+                                  message: message
+                                  delegate:self
+                                  cancelButtonTitle: @"Cancel"
+                                  otherButtonTitles: @"Start new game!", nil ];
+            [ alert show ];
+            [ self updateLabels ];
+            break;
+        }
+            
+        // Lose game
+        case -1: {
+            UIAlertView *alert = [[ UIAlertView alloc ]
+                                  initWithTitle: @"You lose!"
+                                  message: @"Some people make it.."
+                                  delegate:self
+                                  cancelButtonTitle: @"Cancel"
+                                  otherButtonTitles: @"Start new game!", nil];
+            [ alert show ];
+            [ self updateLabels ];
+            break;
+        }
+            
+        default:
+            break;
     }
 }
 
@@ -185,12 +184,13 @@
         
         [ game newGame ];
         [ self updateLabels ];
-        
     }
 }
 
 // Function updates all labels
 - (void) updateLabels {
+    
+    game = [[ GameEngineController alloc ] init ];
     
     // Updates labels
     self.lettersLabel.text = [ game newLettersString ];
@@ -199,7 +199,6 @@
     
     // Empty input field
     self.letterInput.text = @"";
-    
 }
 
 @end
