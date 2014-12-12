@@ -4,7 +4,7 @@ Design document
 ---------------
 Rick Buchter <br>
 10829911 <br>
-Last update: 24-11-2014
+Last update: 12-12-2014
 
 
 ## Goal 
@@ -12,63 +12,87 @@ The goal of the Evel Hangman Game is to dodge user's guess as best as possible.
 After every new guess switch to the most words. To maximize ability to cheat. 
 	
 ## Classes and public methods 
+The frist value inbetween brackets ('[...]') is the return type of the method and the second value says if it is a public of private method.
 
 ### Classes
-#### GameViewController
-- newGame, function to start a new game with the last inputed settings. DONE
-- <del>switchToSettings, action to go the settings screen.</del>
-- <del>newGameButonPressed, action to start a new game.</del>
-- livesStateLabel, reference to the label with the amount of lives left. DONE
-- guessStateLabel, reference to the label with the current state of the game. DONE
-- guessedLettersStateLabel, reference to the label with the letters already guessed by the user. DONE
-- letterInput, reference to the input field where the last letter will be displayed. DONE
+#### GameViewController (start)
+***
+##### FUNCTIONS
+- **viewDidLoad**, checks if basic values of UserDefaults are set. If not the values of 'numberOfLetters' and 'numberOfIncorrectGuesses' are set and newGame function is called. In al other situations the last game will be loaded.[void] [private]
+- **newGame**, function to start a new game with the last inputed settings. [action] [private]
+- **touchesBegan**, removes keyboard if touched outside keyboard. [void] [private]
+- **textFieldShouldReturn**, removes keyboard and process input of user when return is pressed. Calls main game functions. [BOOL] [private]
+- **inputAlerts**, handels all input alerts based on results of inputSizeCheck, inputFormatCheck and inputLettersArrayCheck functions. [void] [private]
+- **winAlerts**, handels win alert, based on result of winCheck function. [void] [private]
+- **loseAlerts**, handles lose alert based on result of loseCheck function. [void] [private]
+- **alertView**, add call to new game function to second button of alert views[void] [private]
+- **updateLabels**, updates all labels. [void] [private]
+
+##### OUTLETS
+- **livesStateLabel**, reference to the label with the amount of lives left.
+- **guessStateLabel**, reference to the label with the current state of the game.
+- **guessedLettersStateLabel**, reference to the label with the letters already guessed by the user.
+- **letterInput**, reference to the input field where the last letter will be displayed.
+
 
 #### SettingsViewController
-- switchToGame, action to return to the current game and save changed settings for next game. 
-- saveSetting, function to save updated data of settings
-- lettersGuesses, reference to the label that displays the current state of the slider
-- incorrentGuesses, reference to the label that displays the current state of the slider. 
+***
+##### FUNCTIONS
+- **viewDidLoad**, checks the values of UserDefaults and update the corrosponding labels and sliders. [void] [private]
+- **sliderNumberOfLettersChanged**, action called when slider is moved, will update UserDefaults. [action] [private]
+- **sliderNumberOfIncorrectGuessesChanged**, action called when slider is moved, will update UserDefaults. [action] [private]
+
+##### OUTLETS
+- **sliderNumerOfLettersLabel**, reference to the label with the amount of letters to guess.
+- **sliderNumberOfIncorrectGuessesLabel**, reference to the label with the amount of incorrect guess before losing.
+- **sliderNumberOfLetters**, reference to the slider with the amount of letters to guess. 
+- **sliderNumberOfIncorrectGuesses**, reference to the slider with the amount of incorrect guess before losing.
+
 
 #### GameEngineController
-- livesCheck
-- wordSwapCheck, check if letters in word are changed if this is not the case the lives will be updated. [void] [private] 
+***
+##### GAME FUNCTIONS
+- **mainGame**, function called on every new input of the user. Removes input form letters. Generate dictionary based on the input. Search for the main item in the dictionary. Updates word list and the word displayed to the user. [void] [public] 
+- **newGame**, sets all UserDefaults to start a new game based on the last input on the settingsview. [void] [public]
+- **initUserDefaults**, initalise UserDefaults object. [void] [public]
+- **winCheck**, checks if user has won game. [BOOL] [public]
+- **loseCheck**, check if user has lose the game. [BOOL] [public]
 
-- **keyWordDictionary**, function generate key for dictionary of word, based on input. Example '_AUpate_A_'. [string] [private]
+##### INPUT CHECK FUNCTIONS 
+- **inputSizeCheck**, checks if input is the right size of 1 character. [BOOL] [public]
+- **inputFormatCheck**, checks if input only contains alphabetical characters (A-Z). [BOOL] [public]
+- **inputLettersArrayCheck**, checks if input is in array 'currentLettersState' in UserDefaults. [BOOL] [public] 
+
+##### DICTIONARY FUNCTIONS
 - **wordsListLoad**, loads words.plist into array and extract array with words of right size. [void] [private]
+- **keyWordDictionary**, loops through characters of word and creates key for word, based on input. Example '_A_A_'. [string] [private]
+- **wordDictionary**, function generating dictionary with keys based on input and values as word arrays. [dictionary] [private]
+- **mainWordDictionary**, search for biggest opbject in dictionary. [string] [private]
 
-- inputSizeCheck, checks if input is the right size of 1 character. [BOOL] [public]
-- inputFormatCheck, checks if input only contains alphabetical characters (A-Z). [BOOL] [public]
-- inputLettersArrayCheck, checks if input is in array 'currentLettersState' in UserDefaults. [BOOL] [public] 
-
-- **lettersUpdate**, updates 'currentLettersState' in UserDefaults by removing guessed letter form array. [void] [public] << PRIVATE?
-- **wordUpdate**, 
-- **livesUpdate**, updates 'currentLives' in UserDefaults with lives decreased by 1. [void] [private]
-
-- **newGame**, sets all UserDefaults to start a new game based on settings. [void] [public]
-
+##### LETTERS FUNCTIONS
 - **newLetterArray**, sets 'currentLettersState' to value of array with characters A-Z in UserDefauls. [void] [private]
 - **newLetterString**, creates string of array of 'currentLettersState' in UserDefaults. [string] [public]
+- **lettersUpdate**, updates 'currentLettersState' in UserDefaults by removing guessed letter form array. [void] [private]
 
-- **newWordArray**, sets 'currentWordState' to array with placeholders '_' for the letters to be guessed,
-based on 'numberOfLetters' in UserDefaults. [void] [private]
+##### WORD FUNCTIONS
+- **newWordArray**, sets 'currentWordState' to array with placeholders '_' for the letters to be guessed, based on 'numberOfLetters' in UserDefaults. [void] [private]
 - **newWordString**, creates string of array 'currentWordState' in UserDefaults. [string] [public]
+- **wordUpdate**, updates 'currentWordState' in UserDefaults based on the largest key in dictionary. [void] [private]
 
+##### LIVES FUNCTIONS 
 - **newLivesInteger**, sets 'currentLives' to value of 'numberOfIncorrectGuesses' in UserDefauls. [void] [private]
 - **newLivesString**, creates string of 'currentLives' in UserDefaults. [string] [public]
+- **livesUpdate**, updates 'currentLives' in UserDefaults with lives decreased by 1. [void] [private]
 
-
-- updateAmountOfGuesses, function update amount of guesses after last guess.
-- updateWordList, update word list after new guess
-- updateGuesses, update het label with the guessed letters. 
 
 #### NSUserDefauts 
-- numberOfLetters [integer], on start app does it have a value of 5. DONE
-- numberOfIncorrectGuesses [integer], on start app does it have a value of 7. DONE
-
-- currentWordState [object], array with characters holding the guess state of the current game. DONE
-- currentLives [integer], holding the lives state of the current game. DONE
-- currentLettersState [object], array with letters holding the guessed letters state of the current game. DONE
-- currentWordArray [object], array with words currenlty used in the game. DONE
+***
+- **numberOfLetters** [integer], on start app does it have a value of 5.
+- **numberOfIncorrectGuesses** [integer], on start app does it have a value of 7.
+- **currentWordState** [object], array with characters holding the guess state of the current game.
+- **currentLives** [integer], holding the lives state of the current game.
+- **currentLettersState** [object], array with letters holding the guessed letters state of the current game. 
+- **currentWordArray** [object], array with words currenlty used in the game. 
 
 
 ## Sketches 
